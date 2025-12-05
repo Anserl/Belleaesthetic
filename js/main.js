@@ -1,0 +1,395 @@
+/**
+ * ARCHIVO JAVASCRIPT PRINCIPAL - BELLE STETIC
+ * -------------------------------------------
+ * Este archivo controla la interactividad del sitio web, incluyendo:
+ * 1. Menú móvil (hamburguesa)
+ * 2. Header pegajoso (sticky) al hacer scroll
+ * 3. Desplazamiento suave (smooth scroll) para enlaces ancla
+ * 4. Animaciones de aparición al hacer scroll (Intersection Observer)
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. MENÚ MÓVIL ---
+    // Seleccionamos el botón de menú y el contenedor de navegación
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+
+    // Agregamos un evento 'click' al botón
+    mobileMenuBtn.addEventListener('click', () => {
+        // Alternamos la clase 'active' en el menú para mostrarlo/ocultarlo
+        nav.classList.toggle('active');
+
+        // Cambiamos el icono entre barras (hamburguesa) y equis (cerrar)
+        const icon = mobileMenuBtn.querySelector('i');
+        if (nav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // --- 2. CERRAR MENÚ AL HACER CLICK EN UN ENLACE ---
+    // Seleccionamos todos los enlaces dentro del menú
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Si el menú está abierto (tiene la clase active), lo cerramos
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                // Restauramos el icono a hamburguesa
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+
+    // --- 2.5. MANTENER ENLACE ACTIVO EN LA PÁGINA ACTUAL ---
+    // Este código asegura que el enlace de la página actual permanezca activo
+    // incluso al hacer scroll o interactuar con la página
+
+    // Función para actualizar el enlace activo
+    function updateActiveNavLink() {
+        // Obtener la URL actual de la página (solo el nombre del archivo)
+        let currentPage = window.location.pathname.split('/').pop();
+
+        // Si está vacío, es la raíz, así que es index.html
+        if (currentPage === '' || currentPage === '/') {
+            currentPage = 'index.html';
+        }
+
+        // Seleccionar SOLO los enlaces del header (no del footer)
+        const headerNavLinks = document.querySelectorAll('.header .nav-list a');
+
+        // Recorrer cada enlace del header
+        headerNavLinks.forEach(link => {
+            // Obtener el href del enlace
+            const linkHref = link.getAttribute('href');
+
+            // Remover la clase active de todos primero
+            link.classList.remove('active');
+
+            // Si el href coincide exactamente con la página actual
+            if (linkHref === currentPage) {
+                // Agregar la clase active
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Ejecutar al cargar la página
+    updateActiveNavLink();
+
+    // También ejecutar cuando se hace scroll (por si acaso)
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveNavLink, 100);
+    });
+
+    // --- 3. HEADER PEGAJOSO (STICKY) ---
+    // Seleccionamos el header
+    const header = document.querySelector('.header');
+
+    // Escuchamos el evento de scroll en la ventana
+    window.addEventListener('scroll', () => {
+        // Si el scroll vertical es mayor a 50px
+        if (window.scrollY > 50) {
+            // Añadimos una sombra más fuerte o cambiamos el fondo si fuera necesario
+            // (En este diseño ya tiene estilos fijos, pero aquí se podrían añadir clases adicionales)
+            header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
+        } else {
+            // Restauramos la sombra original
+            header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
+        }
+    });
+
+    // --- 4. ANIMACIONES AL HACER SCROLL (INTERSECTION OBSERVER) ---
+    // Esta API permite detectar cuando un elemento entra en la pantalla visible
+
+    // Seleccionamos elementos con diferentes tipos de animación
+    const revealUpElements = document.querySelectorAll('.service-card, .team-card, .package-card');
+    const revealLeftElements = document.querySelectorAll('.about-content, .contact-info');
+    const revealRightElements = document.querySelectorAll('.about-image, .contact-form-container');
+    const revealScaleElements = document.querySelectorAll('.section-header');
+
+    // Configuramos el observador
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Si el elemento es visible en la pantalla
+            if (entry.isIntersecting) {
+                // Un pequeño retraso para asegurar que la clase reveal se aplique antes de active
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, 50);
+
+                // Dejamos de observar el elemento una vez animado (para que no se repita)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null, // Usamos el viewport como referencia
+        threshold: 0.15, // La animación se activa cuando el 15% del elemento es visible
+        rootMargin: "0px"
+    });
+
+    // Aplicamos animaciones fadeInUp con delays escalonados
+    revealUpElements.forEach((el, index) => {
+        el.classList.add('reveal');
+        // Añadimos delay escalonado para efecto cascada
+        if (index % 3 === 1) el.classList.add('delay-1');
+        if (index % 3 === 2) el.classList.add('delay-2');
+        revealObserver.observe(el);
+    });
+
+    // Aplicamos animaciones fadeInLeft
+    revealLeftElements.forEach(el => {
+        el.classList.add('reveal-left');
+        revealObserver.observe(el);
+    });
+
+    // Aplicamos animaciones fadeInRight
+    revealRightElements.forEach(el => {
+        el.classList.add('reveal-right');
+        revealObserver.observe(el);
+    });
+
+    // Aplicamos animaciones scaleIn
+    revealScaleElements.forEach(el => {
+        el.classList.add('reveal-scale');
+        revealObserver.observe(el);
+    });
+
+    // --- 5. SCROLL SPY (RESALTAR ENLACE ACTIVO AL HACER SCROLL) ---
+    const sections = document.querySelectorAll('section[id]');
+
+    function scrollActive() {
+        const scrollY = window.scrollY;
+
+        // Verificamos si estamos en la página principal comprobando si existe la sección de servicios
+        if (document.querySelector('#servicios')) {
+
+            // 1. Manejo de secciones con ID (como Servicios)
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 150; // Ajuste para compensar el header fijo
+                const sectionId = current.getAttribute('id');
+                const sectionLink = document.querySelector('.nav-list a[href*="#' + sectionId + '"]');
+
+                if (sectionLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        // Si ya está activo, no hacemos nada para evitar parpadeos
+                        if (!sectionLink.classList.contains('active')) {
+                            document.querySelector('.nav-list a.active')?.classList.remove('active');
+                            sectionLink.classList.add('active');
+                        }
+                    }
+                }
+            });
+
+            // 2. Manejo especial para "Inicio" (cuando estamos en la parte superior)
+            if (scrollY < 100) {
+                const homeLink = document.querySelector('.nav-list a[href="index.html"]');
+                const currentActive = document.querySelector('.nav-list a.active');
+
+                // Si el link de inicio existe y no está activo actualmente
+                if (homeLink && (!currentActive || currentActive !== homeLink)) {
+                    currentActive?.classList.remove('active');
+                    homeLink.classList.add('active');
+                }
+            }
+        }
+    }
+
+    window.addEventListener('scroll', scrollActive);
+
+    // --- 6. CARRUSEL DE TESTIMONIOS ---
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentTestimonial = 0;
+
+    if (testimonials.length > 0) {
+        function showTestimonial(index) {
+            // Ocultar todos
+            testimonials.forEach(t => t.classList.remove('active'));
+            // Mostrar el actual
+            testimonials[index].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            currentTestimonial++;
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            }
+            showTestimonial(currentTestimonial);
+        }
+
+        function prevTestimonial() {
+            currentTestimonial--;
+            if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+            showTestimonial(currentTestimonial);
+        }
+
+        // Event Listeners
+        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+
+        // Auto-play cada 5 segundos
+        setInterval(nextTestimonial, 5000);
+    }
+
+    // --- 7. SLIDER ANTES Y DESPUÉS ---
+    const sliderContainer = document.querySelector('.before-after-container');
+
+    if (sliderContainer) {
+        const sliderHandle = document.querySelector('.slider-handle');
+        const foregroundImg = document.querySelector('.img-foreground');
+        let isDragging = false;
+
+        // Función para actualizar la posición
+        function updateSliderPosition(clientX) {
+            const rect = sliderContainer.getBoundingClientRect();
+            let offsetX = clientX - rect.left;
+
+            // Limitar el movimiento dentro del contenedor
+            if (offsetX < 0) offsetX = 0;
+            if (offsetX > rect.width) offsetX = rect.width;
+
+            // Calcular porcentaje
+            const percentage = (offsetX / rect.width) * 100;
+
+            // Aplicar estilos
+            sliderHandle.style.left = percentage + '%';
+            foregroundImg.style.width = percentage + '%';
+        }
+
+        // Eventos Mouse
+        sliderContainer.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+
+        sliderContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSliderPosition(e.clientX);
+        });
+
+        // Eventos Touch (Móvil)
+        sliderContainer.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+
+        sliderContainer.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            // Prevenir scroll mientras se desliza
+            // e.preventDefault(); 
+            updateSliderPosition(e.touches[0].clientX);
+        });
+    }
+
+    // --- 8. EFECTO PARALLAX SUAVE ---
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+
+        // Parallax para el Hero
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        }
+
+        // Parallax para otras secciones con fondo (si las hubiera)
+        const pageHeaders = document.querySelectorAll('.page-header');
+        pageHeaders.forEach(header => {
+            header.style.backgroundPositionY = -(scrolled * 0.3) + 'px';
+        });
+    });
+
+    // --- 9. CARRUSEL DE GALERÍA DE CLÍNICA ---
+    const clinicSlides = document.querySelectorAll('.clinic-slide');
+    const clinicPrevBtn = document.querySelector('.clinic-prev-btn');
+    const clinicNextBtn = document.querySelector('.clinic-next-btn');
+    const clinicDotsContainer = document.querySelector('.clinic-carousel-dots');
+    let currentClinicSlide = 0;
+    let clinicAutoplayInterval;
+
+    if (clinicSlides.length > 0) {
+        // Crear dots
+        clinicSlides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToClinicSlide(index));
+            clinicDotsContainer.appendChild(dot);
+        });
+
+        const clinicDots = document.querySelectorAll('.clinic-carousel-dots .dot');
+
+        function showClinicSlide(index) {
+            // Ocultar todos
+            clinicSlides.forEach(slide => slide.classList.remove('active'));
+            clinicDots.forEach(dot => dot.classList.remove('active'));
+
+            // Mostrar el actual
+            clinicSlides[index].classList.add('active');
+            clinicDots[index].classList.add('active');
+        }
+
+        function nextClinicSlide() {
+            currentClinicSlide++;
+            if (currentClinicSlide >= clinicSlides.length) {
+                currentClinicSlide = 0;
+            }
+            showClinicSlide(currentClinicSlide);
+        }
+
+        function prevClinicSlide() {
+            currentClinicSlide--;
+            if (currentClinicSlide < 0) {
+                currentClinicSlide = clinicSlides.length - 1;
+            }
+            showClinicSlide(currentClinicSlide);
+        }
+
+        function goToClinicSlide(index) {
+            currentClinicSlide = index;
+            showClinicSlide(currentClinicSlide);
+            resetClinicAutoplay();
+        }
+
+        function resetClinicAutoplay() {
+            clearInterval(clinicAutoplayInterval);
+            clinicAutoplayInterval = setInterval(nextClinicSlide, 5000);
+        }
+
+        // Event Listeners
+        if (clinicNextBtn) clinicNextBtn.addEventListener('click', () => {
+            nextClinicSlide();
+            resetClinicAutoplay();
+        });
+
+        if (clinicPrevBtn) clinicPrevBtn.addEventListener('click', () => {
+            prevClinicSlide();
+            resetClinicAutoplay();
+        });
+
+        // Auto-play cada 5 segundos
+        clinicAutoplayInterval = setInterval(nextClinicSlide, 5000);
+
+        // Pausar autoplay al hacer hover
+        const clinicCarousel = document.querySelector('.clinic-carousel-container');
+        if (clinicCarousel) {
+            clinicCarousel.addEventListener('mouseenter', () => {
+                clearInterval(clinicAutoplayInterval);
+            });
+            clinicCarousel.addEventListener('mouseleave', () => {
+                clinicAutoplayInterval = setInterval(nextClinicSlide, 5000);
+            });
+        }
+    }
+
+
+});

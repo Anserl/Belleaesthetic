@@ -1,0 +1,856 @@
+/* 
+    HOJA DE ESTILOS PRINCIPAL - BELLE STETIC
+    ----------------------------------------
+    Este archivo contiene todos los estilos visuales del sitio web.
+    Está organizado por secciones: Variables, Reset, Componentes, Layout y Responsive.
+*/
+
+/* 
+    1. VARIABLES CSS (:root)
+    Definimos colores y valores comunes aquí para facilitar cambios globales.
+    Si cambias un color aquí, se actualizará en todo el sitio.
+*/
+:root {
+    /* Paleta de Colores Principal */
+    --primary-color: #D4AF37;
+    /* Dorado: Color principal de la marca */
+    --primary-dark: #B5952F;
+    /* Dorado oscuro: Para efectos hover */
+    --secondary-color: #F5E6D3;
+    /* Beige: Color secundario suave */
+    --secondary-dark: #E6D2B5;
+    /* Beige oscuro */
+
+    /* Colores de Texto y Fondo */
+    --text-color: #4A4A4A;
+    /* Gris oscuro: Para texto principal (mejor lectura que negro puro) */
+    --light-text: #7A7A7A;
+    /* Gris claro: Para subtítulos y textos secundarios */
+    --bg-light: #FAF8F5;
+    /* Fondo muy claro: Para secciones alternas */
+    --white: #FFFFFF;
+    /* Blanco puro */
+    --black: #1A1A1A;
+    /* Negro casi puro: Para títulos fuertes */
+
+    /* Efectos */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Sombra suave para tarjetas */
+    --transition: all 0.4s ease;
+    /* Transición estándar para animaciones suaves */
+}
+
+/* 
+    2. RESET Y ESTILOS BASE
+    Normalización básica para asegurar consistencia entre navegadores.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Asegura que el padding no aumente el tamaño total de los elementos */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en enlaces ancla */
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    /* Fuente principal importada de Google Fonts */
+    color: var(--text-color);
+    line-height: 1.6;
+    /* Altura de línea para mejor legibilidad */
+    background-color: var(--white);
+    overflow-x: hidden;
+    /* Evita scroll horizontal indeseado */
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado por defecto de los enlaces */
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+    /* Quita las viñetas por defecto de las listas */
+}
+
+img {
+    max-width: 100%;
+    /* Hace que las imágenes sean responsive */
+    height: auto;
+    display: block;
+}
+
+/* Clase utilitaria para centrar contenido y limitar el ancho máximo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 0 20px;
+    /* Espacio lateral en móviles */
+}
+
+/* 
+    3. COMPONENTES (BOTONES)
+    Estilos reutilizables para botones en todo el sitio.
+*/
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 50px;
+    /* Bordes completamente redondeados */
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Botón Primario (Dorado) */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    /* Efecto de elevación */
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    /* Sombra brillante */
+}
+
+/* Botón Borde (Transparente con borde blanco) */
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Botón Blanco (Fondo blanco) */
+.btn-white {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
+
+.btn-white:hover {
+    background-color: transparent;
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-full {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+}
+
+/* 
+    4. ANIMACIONES
+    Keyframes para efectos de entrada y movimiento.
+*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        /* Empieza 30px abajo */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Termina en su posición original */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Clases para animaciones al hacer scroll (usadas con JS) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 
+    5. HEADER Y NAVEGACIÓN
+*/
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Fondo semitransparente */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque detrás del header */
+    box-shadow: var(--shadow);
+    position: sticky;
+    /* Se queda fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    /* Asegura que esté siempre encima de todo */
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    /* Separa logo y menú a los extremos */
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+    /* Destaca parte del logo en dorado */
+}
+
+.nav-list {
+    display: flex;
+    /* Menú horizontal */
+    gap: 35px;
+}
+
+.nav-list a {
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    position: relative;
+}
+
+/* Efecto de subrayado animado al pasar el mouse */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 
+    7. PAGE HEADERS (Cabeceras de páginas internas)
+*/
+.page-header {
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7));
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* Imágenes de fondo específicas para cada página */
+.page-header-nosotros {
+    background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+
+.page-header-contacto {
+    background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1596178065248-208f3507b967?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+
+.hero-turismo {
+    background-image: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+
+/* 
+    8. SECCIONES GENERALES
+*/
+.section {
+    padding: 100px 0;
+}
+
+.section-bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.section-header h2 span {
+    font-weight: 700;
+}
+
+.section-header p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 
+    9. SERVICIOS (Grid Layout)
+*/
+.services-grid {
+    display: grid;
+    /* Crea columnas automáticas con un ancho mínimo de 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    /* Sube la tarjeta al pasar el mouse */
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.service-card:hover .icon {
+    transform: scale(1.1) rotate(5deg);
+    /* Efecto en el icono */
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    color: var(--light-text);
+    margin-bottom: 25px;
+}
+
+.link-arrow {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.link-arrow:hover {
+    gap: 15px;
+    /* Separa la flecha al hacer hover */
+}
+
+/* 
+    10. PÁGINA NOSOTROS
+*/
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 25px;
+    color: var(--light-text);
+}
+
+.about-values-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+.about-values-list i {
+    color: var(--primary-color);
+}
+
+.about-image img {
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Equipo */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.team-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    /* Imagen circular */
+    object-fit: cover;
+    margin: 0 auto 25px;
+    border: 4px solid var(--secondary-color);
+}
+
+.team-card h3 {
+    color: var(--black);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.team-card p {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* 
+    11. PÁGINA CONTACTO
+*/
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px;
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.info-item .icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.info-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    color: var(--light-text);
+}
+
+.map-container {
+    height: 350px;
+    background-color: #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.contact-form-container {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-family: inherit;
+    background-color: var(--bg-light);
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--white);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+    /* Permite redimensionar solo verticalmente */
+}
+
+/* 
+    12. PAQUETES TURÍSTICOS
+*/
+.package-card {
+    text-align: left;
+    padding-bottom: 40px;
+}
+
+.package-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.package-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.package-list {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.package-list li {
+    list-style: disc;
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+/* 
+    13. CTA (Call to Action)
+*/
+.cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de fondo animado */
+.cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    animation: fadeIn 2s infinite alternate;
+}
+
+.cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.cta p {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 
+    14. FOOTER
+*/
+.footer {
+    background-color: #111;
+    color: var(--white);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-col h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.footer-col h3 span {
+    color: var(--primary-color);
+}
+
+.footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #aaa;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footer-col p {
+    color: #aaa;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+    color: var(--white);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 
+    15. WHATSAPP FLOTANTE
+*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+    /* Animación de pulso continuo */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* 
+    16. RESPONSIVE DESIGN (Media Queries)
+    Ajustes para pantallas más pequeñas (tablets y móviles).
+*/
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+        /* Texto más pequeño en móviles */
+    }
+
+    /* Menú móvil */
+    .nav {
+        display: none;
+        /* Oculto por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 30px;
+        box-shadow: var(--shadow);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav.active {
+        display: block;
+        /* Se muestra cuando tiene la clase 'active' */
+        animation: fadeIn 0.3s ease;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        /* Elementos en vertical */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        /* Muestra el botón hamburguesa */
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Botones apilados en móviles */
+    }
+}

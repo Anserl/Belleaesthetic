@@ -1,0 +1,30 @@
+/* Variables de colores - PALETA COMPLETA */
+:root {
+    /* Rosa */
+    --primary-color: #D4A5A5;
+    --primary-dark: #B88B8B;
+    
+    /* Beige */
+    --secondary-color: #F8F2E8;
+    --secondary-dark: #E8D5C4;
+    
+    /* Verde Sage - NUEVOS */
+    --accent-color: #A8B5A0;
+    --accent-light: #C9D4C3;
+    --accent-dark: #8A9682;
+    
+    /* Texto */
+    --text-color: #4A3428;
+    --light-text: #8B7355;
+    
+    /* Fondos */
+    --bg-light: #FFF9F0;
+    --bg-green: #F0F3EE;
+    --white: #FFFFFF;
+    --black: #2D1F1A;
+    
+    /* Utilidades */
+    --shadow: 0 10px 40px rgba(74, 52, 40, 0.15);
+    --shadow-green: 0 10px 40px rgba(168, 181, 160, 0.15);
+    --transition: all 0.4s ease;
+}
