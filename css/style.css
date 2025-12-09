@@ -323,7 +323,7 @@ img {
 /* HERO SECTION */
 .hero {
     height: 90vh;
-    background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-image: url("../img/hero_image.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
