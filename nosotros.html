@@ -9,7 +9,7 @@
     <title>Nosotros | Belle Aesthetic</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,8 +42,7 @@
         </div>
     </section>
 
-    <br>
-    <br>
+    <div class="spacer"></div>
 
     <section class="section">
         <div class="container">
@@ -72,14 +71,13 @@
         </div>
     </section>
 
-    <br>
+    <div class="spacer"></div>
 
-    <section class="section" style="background-color: #F0F3EE;">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2>Nuestro Equipo</h2>
                 <p>Profesionales dedicados a tu cuidado</p>
-                <br>
             </div>
             <div class="team-grid">
                 <div class="team-card">
@@ -93,15 +91,14 @@
                     <p>Especialista en el cuidado de la piel, Facial y Corporal</p>
                 </div>
             </div>
-            <br>
+        </div>
     </section>
 
+    <div class="spacer"></div>
 
-    <!-- SECCIÓN DE CONTACTO -->
-    <section class="section">
+    <section class="section section-contact">
         <div class="container">
             <div class="section-header">
-                <br>
                 <h2>Contáctanos</h2>
                 <p>Estamos aquí para atenderte</p>
             </div>
@@ -142,30 +139,30 @@
 
                     <div class="map-container">
                         <iframe src="https://maps.google.com/maps?q=6.211684,-75.5722352&z=15&output=embed" width="100%"
-                            height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            height="100%" class="iframe-map" title="Ubicación de Belle Aesthetic" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
                     </div>
-                    <div style="margin-top: 20px; text-align: center;">
+                    <div class="map-button-container">
                         <a href="https://www.google.com/maps/place/Limpieza+Facial+Profunda+%7C+Belle+Aesthetic+Medical+Center/@6.211684,-75.5722352,1555m/data=!3m1!1e3!4m8!3m7!1s0x8e4429f024454a89:0xa5e8d2d6474b89ea!8m2!3d6.2116787!4d-75.5696603!9m1!1b1!16s%2Fg%2F11wpp5v5j9?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="btn btn-primary btn-full">
-                            <i class="fas fa-map-marker-alt"></i> Ver en Google Maps y Dejar Reseña
-                        </a>
+                            target="_blank" rel="noopener" class="btn btn-primary btn-full">
+                            Ver en Google Maps y Dejar Reseña
+           a            </a>
                     </div>
                 </div>
 
                 <div class="contact-form-container">
                     <h2>Envíanos un Mensaje</h2>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Nombre Completo" required>
-                        <input type="email" placeholder="Correo Electrónico" required>
-                        <input type="tel" placeholder="Teléfono">
-                        <select>
+                    <form class="contact-form" action="" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                        <input type="email" name="email" placeholder="Correo Electrónico" required>
+                        <input type="tel" name="telefono" placeholder="Teléfono">
+                        <select name="servicio" title="Selecciona un servicio de interés" required>
                             <option value="">Selecciona un servicio de interés</option>
                             <option value="facial">Tratamientos Faciales</option>
                             <option value="corporal">Tratamientos Corporales</option>
                             <option value="turismo">Turismo Estético</option>
                             <option value="otro">Otro</option>
                         </select>
-                        <textarea placeholder="Tu Mensaje" required></textarea>
+                        <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required></textarea>
                         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                     </form>
                 </div>
@@ -179,9 +176,9 @@
                 <h3>Belle<span>Aesthetic</span></h3>
                 <p>Tu destino para la belleza y el bienestar integral.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Síguenos en Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Síguenos en Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="Síguenos en TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -204,7 +201,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/+3116188733" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/+3116188733" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Contáctanos por WhatsApp" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
