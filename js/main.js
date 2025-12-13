@@ -391,5 +391,94 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- 10. FORMULARIO DE CONTACTO CON REDIRECCIÓN A WHATSAPP ---
+    /**
+     * Documentación de la funcionalidad:
+     * ---------------------------------
+     * Este código gestiona el formulario de contacto de la página "Nosotros".
+     * En lugar de un envío tradicional a un servidor, intercepta los datos
+     * y los formatea para enviarlos a través de un clic a WhatsApp.
+     *
+     * Pasos del proceso:
+     * 1.  **Configuración**: Se define el número de WhatsApp de destino.
+     * 2.  **Selección del Formulario**: Se apunta al formulario con la clase '.contact-form'.
+     * 3.  **Escucha del Evento 'submit'**: Se previene el comportamiento por defecto del formulario.
+     * 4.  **Captura y Limpieza de Datos**: Se obtienen los valores de cada campo y se limpian los espacios en blanco de los extremos (trim).
+     * 5.  **Validación de Campos**: Se verifica que los campos obligatorios no estén vacíos y que el email y teléfono tengan un formato válido.
+     * 6.  **Construcción del Mensaje**: Se crea un texto formateado con los datos del usuario. El formato con asteriscos (`*...*`) se usa para que WhatsApp muestre el texto en negrita.
+     * 7.  **Codificación para URL**: El mensaje se codifica para que pueda ser transmitido de forma segura en una URL.
+     * 8.  **Redirección a WhatsApp**: Se abre una nueva pestaña (`_blank`) con la URL `https://wa.me/...` que incluye el número y el mensaje.
+     * 9.  **Feedback al Usuario**: Se resetea el formulario y se muestra una alerta de confirmación.
+     */
+
+    // 1. Configuración: Número de WhatsApp en formato internacional (código de país + número).
+    const WHATSAPP_NUMBER = '573116188733'; // Reemplazar si el número cambia.
+
+    // 2. Selección del Formulario
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        // 3. Escucha del Evento 'submit'
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita que la página se recargue.
+
+            // 4. Captura y Limpieza de Datos
+            const nombre = document.querySelector('input[name="nombre"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const telefono = document.querySelector('input[name="telefono"]').value.trim();
+            const servicio = document.querySelector('select[name="servicio"]').value;
+            const mensaje = document.querySelector('textarea[name="mensaje"]').value.trim();
+
+            // 5. Validación de Campos
+            if (nombre === '') {
+                alert('Por favor, completa tu nombre.');
+                return; // Detiene la ejecución si el campo está vacío.
+            }
+            
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexEmail.test(email)) {
+                alert('Por favor, ingresa un correo electrónico válido.');
+                return;
+            }
+
+            const regexTelefono = /^[0-9\s\-\+()]{7,}$/; // Permite espacios, guiones y +
+            if (!regexTelefono.test(telefono)) {
+                alert('Por favor, ingresa un número de teléfono válido (mínimo 7 dígitos).');
+                return;
+            }
+            
+            if (!servicio || servicio === '') {
+                alert('Por favor, selecciona un servicio de tu interés.');
+                return;
+            }
+
+            if (mensaje === '') {
+                alert('Por favor, escribe un mensaje.');
+                return;
+            }
+
+            // 6. Construcción del Mensaje para WhatsApp
+            const textoWhatsApp = `*Nuevo contacto desde Belle Aesthetic*
+
+*Nombre:* ${nombre}
+*Email:* ${email}
+*Teléfono:* ${telefono}
+*Servicio de interés:* ${servicio}
+
+*Mensaje:*
+${mensaje}`;
+
+            // 7. Codificación del Mensaje para URL
+            const mensajeEncoded = encodeURIComponent(textoWhatsApp);
+
+            // 8. Redirección a WhatsApp
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensajeEncoded}`;
+            window.open(whatsappUrl, '_blank');
+
+            // 9. Feedback al Usuario
+            contactForm.reset();
+            alert('¡Gracias por tu mensaje! Se abrirá una nueva ventana de WhatsApp para que puedas enviarlo.');
+        });
+    }
 
 });
