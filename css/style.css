@@ -262,6 +262,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .logo {
@@ -271,7 +272,7 @@ img {
 }
 
 .logo img {
-    height: 150px;
+    height: 300px;
     width: auto;
     max-width: 400px;
     transition: var(--transition);
@@ -319,6 +320,9 @@ img {
     font-size: 24px;
     cursor: pointer;
     color: var(--primary-color);
+    z-index: 1001;
+    padding: 10px;
+    margin-left: auto;
 }
 
 /* HERO SECTION */
@@ -842,6 +846,7 @@ img {
         padding: 30px;
         box-shadow: var(--shadow);
         border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 1000;
     }
 
     .nav.active {
@@ -859,6 +864,14 @@ img {
         display: block;
     }
 
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
+
     .hero-buttons {
         flex-direction: column;
     }
@@ -868,12 +881,13 @@ img {
     }
 
     .logo {
-        height: 90px;
-        margin-left: 220px;
+        height: 60px;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .logo img {
-        height: 90px;
+        height: 60px;
     }
 }
 
