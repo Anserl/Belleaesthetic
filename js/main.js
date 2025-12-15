@@ -207,43 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', scrollActive);
 
-    // --- 6. CARRUSEL DE TESTIMONIOS ---
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentTestimonial = 0;
 
-    if (testimonials.length > 0) {
-        function showTestimonial(index) {
-            // Ocultar todos
-            testimonials.forEach(t => t.classList.remove('active'));
-            // Mostrar el actual
-            testimonials[index].classList.add('active');
-        }
-
-        function nextTestimonial() {
-            currentTestimonial++;
-            if (currentTestimonial >= testimonials.length) {
-                currentTestimonial = 0;
-            }
-            showTestimonial(currentTestimonial);
-        }
-
-        function prevTestimonial() {
-            currentTestimonial--;
-            if (currentTestimonial < 0) {
-                currentTestimonial = testimonials.length - 1;
-            }
-            showTestimonial(currentTestimonial);
-        }
-
-        // Event Listeners
-        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
-        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
-
-        // Auto-play cada 5 segundos
-        setInterval(nextTestimonial, 5000);
-    }
 
     // --- 7. SLIDER ANTES Y DESPUÉS ---
     const sliderContainer = document.querySelector('.before-after-container');
