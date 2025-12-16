@@ -1069,12 +1069,16 @@ img {
     background: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.1), transparent 70%);
 }
 
+.premium-experience .section-header {
+    text-align: center;
+}
+
 .premium-experience .section-header h2 {
-    color: #efb810;
+    color: #FFD700;
 }
 
 .premium-experience .section-header p {
-    color: #aaa;
+    color: #ddd;
 }
 
 .bento-grid {
@@ -1104,7 +1108,7 @@ img {
 .grid-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-color);
+    border-color: #BF953F; /* Gold color */
     box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
 }
 
@@ -1188,16 +1192,35 @@ img {
     background-color: var(--bg-light);
 }
 
+.before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.before-after-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .before-after-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 500px;
-    margin: 0 auto;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto 20px;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: var(--shadow);
     cursor: ew-resize;
+    z-index: 1;
+    user-select: none; /* Evita que se seleccionen elementos al arrastrar */
+    -webkit-user-select: none; /* Para navegadores WebKit */
+    -moz-user-select: none; /* Para navegadores Firefox */
+    -ms-user-select: none; /* Para navegadores IE/Edge */
 }
 
 .img-background,
@@ -1280,11 +1303,40 @@ img {
     justify-content: center;
     color: var(--white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: grab; /* Muestra cursor de arrastre */
+    transition: cursor 0.2s ease;
+}
+
+.handle-circle:active {
+    cursor: grabbing; /* Cambia el cursor al hacer clic */
+}
+
+.result-description {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.result-description h4 {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.result-description p {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
     .before-after-container {
-        height: 350px;
+        height: 250px;
+    }
+
+    .before-after-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
@@ -1813,4 +1865,38 @@ img {
 
 .pdf {
     margin: 80px;
+}
+
+.gold-icon {
+    background: linear-gradient(to right, #BF953F, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow to the icon */
+}
+
+.gold-card {
+    background: linear-gradient(to bottom right, #BF953F, #FBF5B7, #AA771C);
+    color: black !important;
+    box-shadow: 0 10px 40px rgba(191, 149, 63, 0.6); /* Using gold rgba with higher opacity */
+}
+
+.gold-card i {
+    color: black !important;
+}
+
+.gold-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Adding a scale effect on hover */
+    box-shadow: 0 20px 50px rgba(191, 149, 63, 0.8); /* Using gold rgba with higher opacity for hover */
+    border-color: #BF953F !important; /* Make the border gold on hover */
+}
+
+.gold-card h3 {
+    color: black !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) !important; /* Stronger shadow */
+    font-weight: 700 !important; /* Make it bolder */
+}
+.gold-card p {
+    color: black !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important; /* Stronger shadow for paragraph */
 }

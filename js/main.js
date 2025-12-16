@@ -210,17 +210,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 7. SLIDER ANTES Y DESPUÉS ---
-    const sliderContainer = document.querySelector('.before-after-container');
+    const sliderContainers = document.querySelectorAll('.before-after-container');
 
-    if (sliderContainer) {
-        const sliderHandle = document.querySelector('.slider-handle');
-        const foregroundImg = document.querySelector('.img-foreground');
-        const beforeLabel = document.querySelector('.label-before');
+    sliderContainers.forEach(container => {
+        const sliderHandle = container.querySelector('.slider-handle');
+        const foregroundImg = container.querySelector('.img-foreground');
+        const beforeLabel = container.querySelector('.label-before');
         let isDragging = false;
 
         // Función para actualizar la posición
         function updateSliderPosition(clientX) {
-            const rect = sliderContainer.getBoundingClientRect();
+            const rect = container.getBoundingClientRect();
             let offsetX = clientX - rect.left;
 
             // Limitar el movimiento dentro del contenedor
@@ -243,25 +243,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Eventos Mouse
-        sliderContainer.addEventListener('mousedown', () => isDragging = true);
-        window.addEventListener('mouseup', () => isDragging = false);
+        const handleMouseDown = (e) => {
+            e.preventDefault(); // Prevenir la selección de texto
+            isDragging = true;
+            // Cambiar cursor a "grabbing"
+            sliderHandle.style.cursor = 'grabbing';
+            container.style.cursor = 'ew-resize';
+        };
 
-        sliderContainer.addEventListener('mousemove', (e) => {
+        sliderHandle.addEventListener('mousedown', handleMouseDown);
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            // Volver cursor a "grab"
+            sliderHandle.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
             updateSliderPosition(e.clientX);
         });
 
         // Eventos Touch (Móvil)
-        sliderContainer.addEventListener('touchstart', () => isDragging = true);
-        window.addEventListener('touchend', () => isDragging = false);
+        const handleTouchStart = (e) => {
+            e.preventDefault(); // Prevenir comportamiento predeterminado
+            isDragging = true;
+            // Cambiar cursor a "grabbing" (aunque no se verá en móvil)
+            sliderHandle.style.cursor = 'grabbing';
+            container.style.cursor = 'ew-resize';
+        };
 
-        sliderContainer.addEventListener('touchmove', (e) => {
+        sliderHandle.addEventListener('touchstart', handleTouchStart);
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+            // Volver cursor a "grab"
+            sliderHandle.style.cursor = 'grab';
+        });
+
+        container.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
-            // Prevenir scroll mientras se desliza
-            // e.preventDefault(); 
+            e.preventDefault(); // Prevenir scroll mientras se desliza
             updateSliderPosition(e.touches[0].clientX);
         });
-    }
+
+        // Cambiar cursor al pasar sobre el handle
+        sliderHandle.addEventListener('mouseenter', () => {
+            if (!isDragging) {
+                sliderHandle.style.cursor = 'grab';
+            }
+        });
+
+        sliderHandle.addEventListener('mouseleave', () => {
+            if (!isDragging) {
+                sliderHandle.style.cursor = 'grab';
+            }
+        });
+    });
 
     // --- 8. EFECTO PARALLAX SUAVE ---
     window.addEventListener('scroll', () => {

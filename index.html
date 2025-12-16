@@ -103,21 +103,83 @@
                 <p>Desliza para ver la transformación</p>
             </div>
 
-            <div class="before-after-container">
-                <div class="img-background">
-                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Antes">
-                    <span class="label label-before">Antes</span>
+            <!-- Contenedor principal para múltiples antes y después -->
+            <div class="before-after-grid">
+                <!-- Ejemplo 1 -->
+                <div class="before-after-item">
+                    <div class="before-after-container">
+                        <div class="img-background">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Antes tratamiento facial">
+                            <span class="label label-before">Antes</span>
+                        </div>
+                        <div class="img-foreground">
+                            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Después tratamiento facial" style="filter: brightness(1.2) contrast(1.1);">
+                            <span class="label label-after">Después</span>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Tratamiento Facial</h4>
+                        <p>Mejora de textura y luminosidad</p>
+                    </div>
                 </div>
-                <div class="img-foreground">
-                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Después" style="filter: brightness(1.2) contrast(1.1);">
-                    <span class="label label-after">Después</span>
+
+                <!-- Ejemplo 2 -->
+                <div class="before-after-item">
+                    <div class="before-after-container">
+                        <div class="img-background">
+                            <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Antes reducción de celulitis">
+                            <span class="label label-before">Antes</span>
+                        </div>
+                        <div class="img-foreground">
+                            <img src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Después reducción de celulitis" style="filter: brightness(1.1) contrast(1.05);">
+                            <span class="label label-after">Después</span>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Tratamiento Corporal</h4>
+                        <p>Reducción de celulitis y firmeza</p>
+                    </div>
                 </div>
-                <div class="slider-handle">
-                    <div class="handle-line"></div>
-                    <div class="handle-circle">
-                        <i class="fas fa-arrows-alt-h"></i>
+
+                <!-- Ejemplo 3 -->
+                <div class="before-after-item">
+                    <div class="before-after-container">
+                        <div class="img-background">
+                            <img src="https://images.unsplash.com/photo-1556228453-efd58f80b2a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Antes contorno facial">
+                            <span class="label label-before">Antes</span>
+                        </div>
+                        <div class="img-foreground">
+                            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Después contorno facial" style="filter: brightness(1.15) contrast(1.1);">
+                            <span class="label label-after">Después</span>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Contorno Facial</h4>
+                        <p>Definición y rejuvenecimiento</p>
                     </div>
                 </div>
             </div>
@@ -255,19 +317,19 @@
             <div class="bento-grid">
                 <div class="grid-item item-1">
                     <div class="grid-content">
-                        <i class="fas fa-microchip"></i>
+                        <i class="fas fa-microchip gold-icon"></i>
                         <h3>Tecnología de Punta</h3>
                         <p>Equipos de última generación para resultados seguros.</p>
                     </div>
                 </div>
                 <div class="grid-item item-2">
                     <div class="grid-content">
-                        <i class="fas fa-spa"></i>
+                        <i class="fas fa-spa gold-icon"></i>
                         <h3>Espacios Relajantes</h3>
                         <p>Diseñados para tu máxima comodidad y paz mental.</p>
                     </div>
                 </div>
-                <div class="grid-item item-3">
+                <div class="grid-item item-3 gold-card">
                     <div class="grid-content">
                         <i class="fas fa-star"></i>
                         <h3>Atención VIP</h3>
@@ -276,7 +338,7 @@
                 </div>
                 <div class="grid-item item-4">
                     <div class="grid-content">
-                        <i class="fas fa-map-marked-alt"></i>
+                        <i class="fas fa-map-marked-alt gold-icon"></i>
                         <h3>Ubicación Privilegiada</h3>
                         <p>En el corazón de la zona más exclusiva.</p>
                     </div>
