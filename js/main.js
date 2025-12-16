@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Parallax para el Hero
         const hero = document.querySelector('.hero');
         if (hero) {
-            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+            // hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px'; // Efecto desactivado a petición del usuario.
         }
 
         // Parallax para otras secciones con fondo (si las hubiera)
