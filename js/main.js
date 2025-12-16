@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliderContainer) {
         const sliderHandle = document.querySelector('.slider-handle');
         const foregroundImg = document.querySelector('.img-foreground');
+        const beforeLabel = document.querySelector('.label-before');
         let isDragging = false;
 
         // Función para actualizar la posición
@@ -232,6 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Aplicar estilos
             sliderHandle.style.left = percentage + '%';
             foregroundImg.style.width = percentage + '%';
+
+            // Ocultar la etiqueta "Antes" cuando el slider se mueve
+            if (percentage > 10) {
+                beforeLabel.classList.add('hidden');
+            } else {
+                beforeLabel.classList.remove('hidden');
+            }
         }
 
         // Eventos Mouse
