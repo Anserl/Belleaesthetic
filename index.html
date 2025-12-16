@@ -20,7 +20,7 @@
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="img/Logo-letra-transparente.png" alt="Belle Aesthe*tic Medical Center">
+                <img src="img/Logo-letra-transparente.png" alt="Belle Aesthetic Medical Center">
             </a>
             <nav class="nav">
                 <ul class="nav-list">
@@ -36,13 +36,17 @@
         </div>
     </header>
 
+    <!-- HERO MODIFICADO: Imagen y texto separados -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Descubre tu mejor versión</h1>
-            <p>Tratamientos estéticos avanzados para realzar tu belleza natural.</p>
-            <a href="turismo-estetico.html" class="btn">Descubre nuestros servicios</a>
-
+        <div class="container hero-container">
+            <!-- 1. La imagen ahora es un elemento, no un fondo -->
+            <img src="img/hero_logo_image.png" alt="Belle Aesthetic - Tratamientos de belleza" class="hero-image">
+            <!-- 2. El texto se coloca debajo de la imagen -->
+            <div class="hero-content">
+                <h1>Descubre tu mejor versión</h1>
+                <p>Tratamientos estéticos avanzados para realzar tu belleza natural.</p>
+                <a href="turismo-estetico.html" class="btn">Descubre nuestros servicios</a>
+            </div>
         </div>
     </section>
 
@@ -118,16 +122,15 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <a href="https://www.google.com/maps/place/Belle+Est%C3%A9tica/@6.211684,-75.5722352,1515m/data=!3m1!1e3!4m8!3m7!1s0x8e44291fd43aca4d:0x8823d7e0e0a4244c!8m2!3d6.211602!4d-75.569183!9m1!1b1!16s%2Fg%2F11krt_5r4g?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
-                        target="_blank" class="review-link">Ver nuestras reseñas</a>
+                    <a href="https://www.google.com/maps/place/Belle+Est%C3%A9tica/@6.211684,-75.5722352,1515m/data=!3m1!1e3!4m8!3m7!1s0x8e44291fd43aca4d:0x8823d7e0e0a4244c!8m2!3d6.211602!4d-75.569183!9m1!1b1!16s%2Fg%2F11krt_5r4g?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D" target="_blank" rel="noopener" class="review-link">Ver nuestras reseñas</a>
                 </div>
 
                 <div class="google-reviews-grid">
                     <!-- Reseña 1 -->
                     <div class="google-review-card">
                         <div class="review-header">
-                            <img src="https://lh3.googleusercontent.com/a/ACg8ocL-j3vj2_k4k4k4k4k4k4k4k4k4=s40-c-rp-mo-br100"
-                                alt="Foto usuario" class="reviewer-photo">
+                            <img src="img/review-helen.jpg"
+                                alt="Foto de Helen Gallego Bedoya" class="reviewer-photo">
                             <div class="reviewer-info">
                                 <h4>Helen Gallego Bedoya</h4>
                                 <span class="review-date">Hace 4 meses</span>
@@ -150,11 +153,11 @@
                     <!-- Reseña 2 -->
                     <div class="google-review-card">
                         <div class="review-header">
-                            <img src="https://lh3.googleusercontent.com/a/ACg8ocM-l5vj5_m5m5m5m5m5m5m5m5m5=s40-c-rp-mo-br100"
-                                alt="Foto usuario" class="reviewer-photo">
+                            <img src="img/review-abel.jpg"
+                                alt="Foto de Abel Garmendia" class="reviewer-photo">
                             <div class="reviewer-info">
                                 <h4>Abel Garmendia</h4>
-                                <span class="review-date">2 semanas atrás</span>
+                                <span class="review-date">Hace 2 semanas</span>
                             </div>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                                 alt="G" class="google-icon-small">
@@ -173,8 +176,8 @@
                     <!-- Reseña 3 -->
                     <div class="google-review-card">
                         <div class="review-header">
-                            <img src="https://lh3.googleusercontent.com/a/ACg8ocN-n6vj6_o6o6o6o6o6o6o6o6o6=s40-c-rp-mo-br100"
-                                alt="Foto usuario" class="reviewer-photo">
+                            <img src="img/review-carolina.jpg"
+                                alt="Foto de Carolina Hecht" class="reviewer-photo">
                             <div class="reviewer-info">
                                 <h4>Carolina Hecht</h4>
                                 <span class="review-date">Hace 4 meses</span>
@@ -198,7 +201,7 @@
 
                 <div class="google-reviews-cta">
                     <a href="https://www.google.com/maps/place/Belle+Est%C3%A9tica/@6.211684,-75.5722352,1515m/data=!3m1!1e3!4m8!3m7!1s0x8e44291fd43aca4d:0x8823d7e0e0a4244c!8m2!3d6.211602!4d-75.569183!9m1!1b1!16s%2Fg%2F11krt_5r4g?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
-                        target="_blank" class="btn btn-outline-dark">
+                        target="_blank" class="btn btn-outline-dark" rel="noopener noreferrer">
                         <i class="fab fa-google"></i> Escribir una reseña
                     </a>
                 </div>
