@@ -179,13 +179,16 @@ img {
     background-color: var(--primary-color);
     color: var(--white);
     border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .btn-primary:hover {
     background-color: transparent;
     color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(201, 162, 39, 0.4);
+    box-shadow: 0 12px 25px rgba(212, 165, 165, 0.4);
 }
 
 .btn-outline {
@@ -264,23 +267,59 @@ img {
 /* HERO SECTION */
 .hero {
     height: auto;
-    padding: 60px 20px;
+    padding: 80px 20px 40px;
     position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-light), var(--secondary-color));
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: radial-gradient(ellipse at top, rgba(212, 165, 165, 0.15), transparent 70%);
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: radial-gradient(ellipse at bottom, rgba(168, 181, 160, 0.1), transparent 70%);
+    z-index: 0;
 }
 
 .hero-image-container {
-    max-width: 1000px; /* Aumentado el ancho */
-    margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     position: relative;
+    z-index: 1;
+    transform: perspective(1000px) rotateX(5deg);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hero-image-container:hover {
+    transform: perspective(1000px) rotateX(0deg) scale(1.02);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.35);
 }
 
 .hero-image-container img {
     width: 100%;
     display: block;
-    transition: var(--transition);
+    transition: transform 0.8s ease;
+}
+
+.hero-image-container:hover img {
+    transform: scale(1.05);
 }
 
 .hero-image-overlay {
@@ -289,119 +328,348 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Oscurece ligeramente la imagen */
+    background: linear-gradient(135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(74, 52, 40, 0.2) 50%,
+        rgba(0, 0, 0, 0.3) 100%);
     z-index: 2;
-    pointer-events: none; /* Permite que los clicks pasen a través del overlay */
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.hero-image-container:hover .hero-image-overlay {
+    background: linear-gradient(135deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(74, 52, 40, 0.15) 50%,
+        rgba(0, 0, 0, 0.2) 100%);
 }
 
 .hero-text-content {
     text-align: center;
-    padding: 60px 20px;
+    padding: 20px 20px 80px;
     position: relative;
     z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-text-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(212, 165, 165, 0.2);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-text-content p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 45px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 300;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+    animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* ANIMACIONES PARA EL HERO */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 165, 165, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(212, 165, 165, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 165, 165, 0);
+    }
+}
+
+/* EFECTOS DE HOVER PARA BOTONES EN HERO */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+    z-index: 1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px 30px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text-content p {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-image-container {
+        margin-bottom: 40px;
+        border-radius: 15px;
+    }
 }
 
 /* HEADER */
 .header {
-    background-color: rgba(255, 255, 255, 0.98);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 242, 232, 0.95));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0;
-    transition: var(--transition);
+    padding: 15px 0;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(212, 165, 165, 0.15);
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 100px;
+    height: 100%;
     width: auto;
-    max-width: 400px;
-    transition: var(--transition);
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+    max-width: 220px;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+    border-radius: 8px;
 }
 
 .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03) rotate(1deg);
+    filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-list {
     display: flex;
-    gap: 35px;
+    gap: 40px;
+    align-items: center;
+    padding: 5px 0;
 }
 
 .nav-list a {
     font-weight: 600;
     color: var(--text-color);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     position: relative;
+    padding: 10px 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.nav-list a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateZ(0);
 }
 
 .nav-list a::after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
+    top: 50%;
     left: 0;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+    transition: all 0.3s ease;
 }
 
-.nav-list a:hover::after,
-.nav-list a.active::after {
+.nav-list a:hover::before {
     width: 100%;
+}
+
+.nav-list a:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
 }
 
 .nav-list a:hover,
 .nav-list a.active {
     color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav-list a.active {
+    position: relative;
+}
+
+.nav-list a.active::before {
+    width: 100%;
+    height: 3px;
+}
+
+.nav-list a.active::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.nav-list a.active::after {
+    background: var(--accent-color);
+}
+
+/* EFECTO DE FONDO AL PASAR EL MOUSE */
+.nav-list a::after {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 .mobile-menu-btn {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    color: var(--primary-color);
-    z-index: 1001;
-    padding: 10px;
-    margin-left: auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.mobile-menu-btn:hover {
+    transform: scale(1.1);
+}
+
+/* EFECTO DE DESPLAZAMIENTO DEL HEADER */
+.header.scrolled {
+    padding: 10px 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 242, 232, 0.98));
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header.scrolled .logo img {
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .logo img {
+        height: 100%;
+        max-width: 180px;
+    }
+
+    .nav {
+        flex: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 242, 232, 0.98));
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .nav-list a {
+        padding: 15px 20px;
+        display: block;
+        border-bottom: 1px solid rgba(212, 165, 165, 0.1);
+    }
+
+    .nav-list a::before,
+    .nav-list a::after {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+    }
 }
 
 /* HERO SECTION */
@@ -917,7 +1185,7 @@ img {
 .instagram-float {
     position: fixed;
     bottom: 30px;
-    right: 100px; /* Colocar a la izquierda del botón de WhatsApp */
+    right: 110px; /* Colocar a la izquierda del botón de WhatsApp en desktop */
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
     width: 65px;
@@ -930,10 +1198,85 @@ img {
     box-shadow: 0 6px 20px rgba(193, 53, 132, 0.5);
     z-index: 1000;
     transition: var(--transition);
+    animation: pulse-instagram 2s infinite;
+}
+
+.instagram-float i {
+    background: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .instagram-float:hover {
     transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(193, 53, 132, 0.7);
+}
+
+.instagram-float:hover i {
+    -webkit-text-fill-color: white;
+    text-shadow: none;
+}
+
+/* RESPONSIVE PARA BOTONES FLOTANTES */
+@media (min-width: 769px) {
+    .whatsapp-float {
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+    }
+
+    .instagram-float {
+        bottom: 30px;
+        right: 110px; /* Colocar a la izquierda del botón de WhatsApp */
+        width: 65px;
+        height: 65px;
+        font-size: 35px;
+        display: flex; /* Mostrar en desktop */
+    }
+
+    .instagram-float i {
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .instagram-float:hover i {
+        -webkit-text-fill-color: white;
+        text-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
+
+    .instagram-float {
+        bottom: 90px; /* Colocado arriba del botón de WhatsApp */
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
+}
+
+@keyframes pulse-instagram {
+    0% {
+        box-shadow: 0 0 0 0 rgba(193, 53, 132, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(193, 53, 132, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(193, 53, 132, 0);
+    }
 }
 
 @keyframes pulse {
@@ -1154,6 +1497,38 @@ img {
     background: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.1), transparent 70%);
 }
 
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.section-header p {
+    color: var(--light-text);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos específicos para testimonios y otras secciones que puedan tener estilos previos */
+.testimonials-section .section-header h2,
+.clinic-gallery-section .section-header h2 {
+    text-align: center !important;
+}
+
+.testimonials-section .section-header p,
+.clinic-gallery-section .section-header p {
+    text-align: center !important;
+}
+
 .premium-experience .section-header {
     text-align: center;
 }
@@ -1302,10 +1677,10 @@ img {
     box-shadow: var(--shadow);
     cursor: ew-resize;
     z-index: 1;
-    user-select: none; /* Evita que se seleccionen elementos al arrastrar */
+    -ms-user-select: none; /* Evita que se seleccionen elementos al arrastrar */
     -webkit-user-select: none; /* Para navegadores WebKit */
     -moz-user-select: none; /* Para navegadores Firefox */
-    -ms-user-select: none; /* Para navegadores IE/Edge */
+    user-select: none; /* Para navegadores IE/Edge */
 }
 
 .img-background,

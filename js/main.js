@@ -99,12 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         // Si el scroll vertical es mayor a 50px
         if (window.scrollY > 50) {
-            // Añadimos una sombra más fuerte o cambiamos el fondo si fuera necesario
-            // (En este diseño ya tiene estilos fijos, pero aquí se podrían añadir clases adicionales)
-            header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
+            // Añadimos la clase scrolled para el efecto de compactación
+            header.classList.add('scrolled');
         } else {
-            // Restauramos la sombra original
-            header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
+            // Removemos la clase scrolled cuando está en la parte superior
+            header.classList.remove('scrolled');
         }
     });
 
