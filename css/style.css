@@ -1647,156 +1647,192 @@ img {
     }
 }
 
-/* ANTES Y DESPUÉS SLIDER */
+/*
+ * ANTES Y DESPUÉS SLIDER - ESTILOS CSS EXPLICATIVOS
+ *
+ * ESTA SECCIÓN CREA EL CONTROL DESLIZANTE QUE PERMITE COMPARAR
+ * IMÁGENES DE "ANTES" Y "DESPUÉS" DE TRATAMIENTOS ESTÉTICOS
+ */
+
+/* Contenedor principal de la sección */
 .before-after-section {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light); /* Fondo claro para resaltar la sección */
 }
 
+/* Grid para organizar múltiples controles deslizantes */
 .before-after-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 40px; /* Espacio entre elementos */
+    margin-top: 40px; /* Espacio superior */
 }
 
+/* Elemento individual de cada control deslizante */
 .before-after-item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Apilado vertical */
+    align-items: center; /* Centrado horizontal */
+    text-align: center; /* Texto centrado */
 }
 
+/*
+ * CONTENEDOR PRINCIPAL DEL CONTROL DESLIZANTE
+ * ESTE ES EL ELEMENTO QUE VISIBLEMENTE CONTIENE EL CONTROL
+ */
 .before-after-container {
-    position: relative;
+    position: relative; /* Posicionamiento relativo para contener elementos absolutos */
     width: 100%;
-    max-width: 400px;
-    height: 300px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    cursor: ew-resize;
-    z-index: 1;
+    max-width: 400px; /* Ancho máximo */
+    height: 300px; /* Altura fija */
+    margin: 0 auto 20px; /* Centrado horizontal y margen inferior */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: var(--shadow); /* Sombra del contenedor */
+    cursor: ew-resize; /* Cursor de desplazamiento horizontal */
+    z-index: 1; /* Nivel de apilamiento */
     -ms-user-select: none; /* Evita que se seleccionen elementos al arrastrar */
     -webkit-user-select: none; /* Para navegadores WebKit */
     -moz-user-select: none; /* Para navegadores Firefox */
     user-select: none; /* Para navegadores IE/Edge */
 }
 
+/*
+ * ESTILOS PARA LAS DOS CAPAS DE IMÁGENES:
+ * - img-background: Imagen de "antes" (fondo)
+ * - img-foreground: Imagen de "después" (superpuesta, parcialmente visible)
+ */
 .img-background,
 .img-foreground {
-    position: absolute;
+    position: absolute; /* Posición absoluta dentro del contenedor */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Recorta la imagen al tamaño del contenedor */
 }
 
 .img-background img,
 .img-foreground img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ajusta la imagen manteniendo proporción */
     display: block;
 }
 
+/*
+ * Imagen de "después" que se superpone sobre la imagen de "antes"
+ * Su ancho cambia dinámicamente según la posición del slider
+ */
 .img-foreground {
-    width: 50%;
-    border-right: 3px solid var(--white);
-    z-index: 2;
+    width: 50%; /* Ancho inicial del 50% */
+    border-right: 3px solid var(--white); /* Línea divisoria blanca */
+    z-index: 2; /* Nivel superior para que esté sobre la imagen de fondo */
 }
 
+/* Etiquetas de texto para identificar cada imagen */
 .label {
-    position: absolute;
-    top: 20px;
-    padding: 5px 15px;
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--white);
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    pointer-events: none;
-    z-index: 1;
+    position: absolute; /* Posición absoluta en el contenedor */
+    top: 20px; /* Distancia desde arriba */
+    padding: 5px 15px; /* Relleno interno */
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: var(--white); /* Texto blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    font-weight: 600; /* Peso de fuente */
+    text-transform: uppercase; /* Mayúsculas */
+    pointer-events: none; /* No interfiere con los eventos de mouse */
+    z-index: 3; /* Nivel superior para estar sobre las imágenes */
 }
 
+/* Etiqueta de "antes" (izquierda) */
 .label-before {
-    left: 20px;
+    left: 20px; /* Posición desde la izquierda */
 }
 
+/* Etiqueta de "después" (derecha) */
 .label-after {
-    right: 20px;
+    right: 20px; /* Posición desde la derecha */
 }
 
+/*
+ * MANIPULADOR DEL CONTROL DESLIZANTE
+ * Este es el elemento que el usuario arrastra para revelar la imagen
+ */
 .slider-handle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 40px;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: grab;
+    position: absolute; /* Posición absoluta en el contenedor */
+    top: 0; /* Alineado arriba */
+    left: 50%; /* Inicialmente centrado (50%) */
+    height: 100%; /* Altura completa del contenedor */
+    width: 40px; /* Ancho del área de interacción */
+    transform: translateX(-50%); /* Centrado horizontal preciso */
+    z-index: 10; /* Nivel superior para interacción */
+    display: flex; /* Layout flexible */
+    flex-direction: column; /* Apilado vertical */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    cursor: grab; /* Cursor de agarre */
 }
 
+/* Línea vertical del slider */
 .handle-line {
-    width: 2px;
-    height: 100%;
-    background-color: var(--white);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 2px; /* Ancho delgada línea */
+    height: 100%; /* Altura completa */
+    background-color: var(--white); /* Color blanco */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
 }
 
+/* Círculo central del control deslizante */
 .handle-circle {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    border: 3px solid var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: cursor 0.2s ease;
+    position: absolute; /* Posición absoluta */
+    width: 40px; /* Ancho */
+    height: 40px; /* Altura */
+    background-color: var(--primary-color); /* Color primario de la marca */
+    border: 3px solid var(--white); /* Borde blanco */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    color: var(--white); /* Color del icono */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: cursor 0.2s ease; /* Transición al cambiar cursor */
 }
 
+/* Cambio de cursor cuando se está arrastrando */
 .slider-handle:active,
 .handle-circle:active {
-    cursor: grabbing;
+    cursor: grabbing; /* Cursor de arrastre activo */
 }
 
+/* Sección de descripción debajo del control deslizante */
 .result-description {
-    text-align: center;
-    margin-top: 15px;
+    text-align: center; /* Texto centrado */
+    margin-top: 15px; /* Margen superior */
 }
 
 .result-description h4 {
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    font-weight: 600;
+    margin-bottom: 8px; /* Margen inferior */
+    color: var(--primary-color); /* Color primario */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    font-weight: 600; /* Peso de fuente */
 }
 
 .result-description p {
-    color: var(--light-text);
-    font-size: 0.9rem;
-    margin: 0;
+    color: var(--light-text); /* Color de texto secundario */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    margin: 0; /* Sin márgenes */
 }
 
+/* ESTILOS RESPONSIVES PARA DISPOSITIVOS MÓVILES */
 @media (max-width: 768px) {
+    /* Altura reducida para pantallas pequeñas */
     .before-after-container {
         height: 250px;
     }
 
+    /* Diseño de una sola columna */
     .before-after-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 30px; /* Espacio reducido entre elementos */
     }
 }
 
@@ -2323,8 +2359,47 @@ img {
     }
 }
 
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--secondary-dark);
+    background: var(--white);
+}
+
 .pdf {
-    margin: 80px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.pdf:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para el PDF si necesitas mostrarlo como enlace alternativo */
+.pdf-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    margin: 20px 0;
+}
+
+.pdf-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 165, 165, 0.4);
 }
 
 .gold-icon {
