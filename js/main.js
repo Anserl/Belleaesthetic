@@ -215,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sliderContainers.forEach(container => {
         const sliderHandle = container.querySelector('.slider-handle');
         const foregroundImg = container.querySelector('.img-foreground');
-        const beforeLabel = container.querySelector('.label-before');
         let isDragging = false;
 
         // Función para actualizar la posición
@@ -230,16 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calcular porcentaje
             const percentage = (offsetX / rect.width) * 100;
 
+
             // Aplicar estilos
             sliderHandle.style.left = percentage + '%';
             foregroundImg.style.width = percentage + '%';
-
-            // Ocultar la etiqueta "Antes" cuando el slider se mueve
-            if (percentage > 10) {
-                beforeLabel.classList.add('hidden');
-            } else {
-                beforeLabel.classList.remove('hidden');
-            }
         }
 
         // Eventos Mouse
@@ -424,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Selección del Formulario
     const contactForm = document.querySelector('.contact-form');
-    
+
     if (contactForm) {
         // 3. Escucha del Evento 'submit'
         contactForm.addEventListener('submit', (e) => {
@@ -442,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Por favor, completa tu nombre.');
                 return; // Detiene la ejecución si el campo está vacío.
             }
-            
+
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(email)) {
                 alert('Por favor, ingresa un correo electrónico válido.');
@@ -454,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Por favor, ingresa un número de teléfono válido (mínimo 7 dígitos).');
                 return;
             }
-            
+
             if (!servicio || servicio === '') {
                 alert('Por favor, selecciona un servicio de tu interés.');
                 return;
