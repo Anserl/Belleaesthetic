@@ -1,0 +1,79 @@
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Servicios de Medicina Estética - Belle Aesthetic Medellín",
+    "description": "Catálogo completo de tratamientos de medicina estética disponibles en Belle Aesthetic Medical Center",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@type": "Service",
+                "name": "Toxina Botulínica (Botox)",
+                "description": "Suaviza líneas de expresión en entrecejo, patas de gallina y frente. Previene el envejecimiento prematuro sin congelar el rostro.",
+                "provider": {
+                    "@type": "MedicalBusiness",
+                    "name": "Belle Aesthetic Medical Center"
+                },
+                "serviceType": "Medicina Estética",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Medellín"
+                }
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@type": "Service",
+                "name": "Ácido Hialurónico",
+                "description": "Proyección, hidratación y armonización de labios, mentón, pómulos y nariz (rinomodelación).",
+                "provider": {
+                    "@type": "MedicalBusiness",
+                    "name": "Belle Aesthetic Medical Center"
+                },
+                "serviceType": "Medicina Estética"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@type": "Service",
+                "name": "Bioestimuladores (Sculptra/Radiesse)",
+                "description": "Estimulación natural de colágeno para rejuvenecimiento facial con resultados duraderos hasta 2 años.",
+                "provider": {
+                    "@type": "MedicalBusiness",
+                    "name": "Belle Aesthetic Medical Center"
+                }
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+                "@type": "Service",
+                "name": "Emsculpt",
+                "description": "Tecnología electromagnética que quema grasa y construye músculo en abdomen y glúteos.",
+                "provider": {
+                    "@type": "MedicalBusiness",
+                    "name": "Belle Aesthetic Medical Center"
+                }
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+                "@type": "Service",
+                "name": "Mesoterapia Capilar",
+                "description": "Tratamiento para frenar la caída del cabello y estimular el crecimiento capilar.",
+                "provider": {
+                    "@type": "MedicalBusiness",
+                    "name": "Belle Aesthetic Medical Center"
+                }
+            }
+        }
+    ]
+}

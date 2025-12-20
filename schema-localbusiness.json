@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Belle Aesthetic Medical Center",
+  "description": "Centro de medicina estética en Medellín especializado en rejuvenecimiento facial, tratamientos corporales y turismo médico estético.",
+  "image": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
+  "logo": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
+  "url": "https://belleaesthetic.com",
+  "telephone": "+57-300-XXX-XXXX",
+  "email": "contacto@belleaesthetic.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle XX # XX-XX, El Poblado",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "postalCode": "050021",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 6.2088,
+    "longitude": -75.5686
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "priceRange": "$$",
+  "paymentAccepted": "Cash, Credit Card, Debit Card",
+  "currenciesAccepted": "COP, USD",
+  "hasMap": "https://maps.google.com/?q=Belle+Aesthetic+Medellin",
+  "sameAs": [
+    "https://www.instagram.com/belleaesthetic",
+    "https://www.facebook.com/belleaesthetic",
+    "https://wa.me/573XXXXXXXXX"
+  ],
+  "medicalSpecialty": [
+    "Aesthetic Medicine",
+    "Dermatology",
+    "Cosmetic Surgery"
+  ],
+  "availableService": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "Toxina Botulínica (Botox)",
+      "description": "Tratamiento para suavizar arrugas de expresión"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Ácido Hialurónico",
+      "description": "Rellenos dérmicos para armonización facial"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Bioestimuladores",
+      "description": "Sculptra y Radiesse para estimulación de colágeno"
+    }
+  ]
+}

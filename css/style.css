@@ -569,17 +569,17 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 85px;
     flex-shrink: 0;
 }
 
 .logo img {
     height: 100%;
     width: auto;
-    max-width: 220px;
+    max-width: 250px;
     transition: all 0.4s ease;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
-    border-radius: 8px;
+    border-radius: 50%;
 }
 
 .logo img:hover {
@@ -2831,7 +2831,9 @@ img {
         right: 20px;
         left: auto;
     }
-}/* SERVICIOS - ACORDEÓN DESPLEGABLE */
+}
+
+/* SERVICIOS - ACORDEÓN DESPLEGABLE */
 .services-accordion {
     max-width: 900px;
     margin: 0 auto;
@@ -2972,6 +2974,7 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
 /* DETALLES DE TRATAMIENTOS (EXPANDIBLES) */
 .service-details details {
     margin-bottom: 8px;
