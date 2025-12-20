@@ -1,0 +1,55 @@
+/* DETALLES DE TRATAMIENTOS (EXPANDIBLES) */
+.service-details details {
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 165, 165, 0.15);
+    transition: all 0.3s ease;
+}
+
+.service-details details:last-child {
+    border-bottom: none;
+}
+
+.service-details summary {
+    cursor: pointer;
+    padding: 8px 0 8px 25px;
+    position: relative;
+    list-style: none;
+    /* Ocultar marcador default */
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.service-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.service-details summary::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-details details[open] summary::before {
+    transform: rotate(45deg);
+    /* Convertir + en x cuando está abierto */
+}
+
+.service-details summary:hover {
+    color: var(--primary-color);
+}
+
+.service-details p.treatment-info {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    padding: 5px 0 10px 25px;
+    margin: 0;
+    line-height: 1.4;
+    font-style: italic;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(248, 242, 232, 0.3));
+}
