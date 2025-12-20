@@ -228,10 +228,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calcular porcentaje
             const percentage = (offsetX / rect.width) * 100;
 
-
             // Aplicar estilos
             sliderHandle.style.left = percentage + '%';
             foregroundImg.style.width = percentage + '%';
+
+            // Control de visibilidad de etiquetas
+            const labelBefore = container.querySelector('.label-before');
+            const labelAfter = container.querySelector('.label-after');
+
+            if (labelBefore) {
+                // Ocultar "Antes" si el slider está muy a la izquierda
+                labelBefore.style.opacity = percentage < 15 ? '0' : '1';
+            }
+            if (labelAfter) {
+                // Ocultar "Después" si el slider está muy a la derecha
+                labelAfter.style.opacity = percentage > 85 ? '0' : '1';
+            }
         }
 
         // Eventos Mouse
