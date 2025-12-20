@@ -423,11 +423,11 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // Evita que la página se recargue.
 
             // 4. Captura y Limpieza de Datos
-            const nombre = document.querySelector('input[name="nombre"]').value.trim();
-            const email = document.querySelector('input[name="email"]').value.trim();
-            const telefono = document.querySelector('input[name="telefono"]').value.trim();
-            const servicio = document.querySelector('select[name="servicio"]').value;
-            const mensaje = document.querySelector('textarea[name="mensaje"]').value.trim();
+            const nombre = contactForm.querySelector('input[name="nombre"]').value.trim();
+            const email = contactForm.querySelector('input[name="email"]').value.trim();
+            const telefono = contactForm.querySelector('input[name="telefono"]').value.trim();
+            const servicio = contactForm.querySelector('select[name="servicio"]').value;
+            const mensaje = contactForm.querySelector('textarea[name="mensaje"]').value.trim();
 
             // 5. Validación de Campos
             if (nombre === '') {

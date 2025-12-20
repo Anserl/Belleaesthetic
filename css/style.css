@@ -136,6 +136,14 @@ section {
     margin-bottom: 60px;
 }
 
+.section-bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-bg-green {
+    background-color: var(--bg-green);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -336,9 +344,9 @@ img {
 
 .hero-image-container:hover .hero-image-overlay {
     background: linear-gradient(135deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(74, 52, 40, 0.15) 50%,
-        rgba(0, 0, 0, 0.2) 100%);
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(74, 52, 40, 0.15) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
 }
 
 .hero-text-content {
@@ -390,9 +398,11 @@ img {
     0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
+
     100% {
         transform: translateY(0px);
     }
@@ -402,9 +412,11 @@ img {
     0% {
         box-shadow: 0 0 0 0 rgba(212, 165, 165, 0.4);
     }
+
     70% {
         box-shadow: 0 0 0 20px rgba(212, 165, 165, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(212, 165, 165, 0);
     }
@@ -454,6 +466,79 @@ img {
     .hero-image-container {
         margin-bottom: 40px;
         border-radius: 15px;
+    }
+}
+
+/* HERO TURISMO - NUEVO DISEÑO INMERSIVO */
+.hero-turismo {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../img/Medellin Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-turismo-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 900px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-turismo h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.hero-turismo p {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-turismo .btn {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-turismo .badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(168, 181, 160, 0.4);
+}
+
+@media (max-width: 768px) {
+    .hero-turismo h1 {
+        font-size: 3rem;
+    }
+
+    .hero-turismo-content {
+        padding: 40px 20px;
     }
 }
 
@@ -538,28 +623,13 @@ img {
     transform: translateZ(0);
 }
 
-.nav-list a::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 4px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0;
-    transform: translateY(-50%) scale(0);
-    transition: all 0.3s ease;
-}
+
 
 .nav-list a:hover::before {
     width: 100%;
 }
 
-.nav-list a:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
-}
+
 
 .nav-list a:hover,
 .nav-list a.active {
@@ -576,19 +646,12 @@ img {
     height: 3px;
 }
 
-.nav-list a.active::after {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
-}
 
-.nav-list a.active::after {
-    background: var(--accent-color);
-}
+
+
 
 /* EFECTO DE FONDO AL PASAR EL MOUSE */
-.nav-list a::after {
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-}
+
 
 .mobile-menu-btn {
     display: none;
@@ -964,7 +1027,7 @@ img {
     width: 100%;
     padding: 18px;
     margin-bottom: 20px;
-    border: 2px solid #e8e8e8;
+    border: 2px solid var(--secondary-dark);
     border-radius: 8px;
     font-family: inherit;
     background-color: var(--bg-light);
@@ -1064,9 +1127,10 @@ img {
 
 /* FOOTER */
 .footer {
-    background-color: #111;
+    background-color: var(--black);
     color: var(--white);
     padding: 80px 0 30px;
+    border-top: 10px solid var(--accent-dark);
 }
 
 .footer-grid {
@@ -1110,7 +1174,7 @@ img {
 }
 
 .footer-col ul li a {
-    color: #aaa;
+    color: var(--secondary-dark);
     transition: var(--transition);
 }
 
@@ -1120,7 +1184,7 @@ img {
 }
 
 .footer-col p {
-    color: #aaa;
+    color: var(--secondary-dark);
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -1154,7 +1218,7 @@ img {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 30px;
-    color: #666;
+    color: var(--accent-light);
     font-size: 14px;
 }
 
@@ -1182,7 +1246,8 @@ img {
 .instagram-float {
     position: fixed;
     bottom: 30px;
-    right: 110px; /* Colocar a la izquierda del botón de WhatsApp en desktop */
+    right: 110px;
+    /* Colocar a la izquierda del botón de WhatsApp en desktop */
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
     width: 65px;
@@ -1226,11 +1291,13 @@ img {
 
     .instagram-float {
         bottom: 30px;
-        right: 110px; /* Colocar a la izquierda del botón de WhatsApp */
+        right: 110px;
+        /* Colocar a la izquierda del botón de WhatsApp */
         width: 65px;
         height: 65px;
         font-size: 35px;
-        display: flex; /* Mostrar en desktop */
+        display: flex;
+        /* Mostrar en desktop */
     }
 
     .instagram-float i {
@@ -1254,7 +1321,8 @@ img {
     }
 
     .instagram-float {
-        bottom: 90px; /* Colocado arriba del botón de WhatsApp */
+        bottom: 90px;
+        /* Colocado arriba del botón de WhatsApp */
         right: 20px;
         width: 55px;
         height: 55px;
@@ -1565,7 +1633,8 @@ img {
 .grid-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
-    border-color: #BF953F; /* Gold color */
+    border-color: #BF953F;
+    /* Gold color */
     box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
 }
 
@@ -1653,23 +1722,30 @@ img {
 
 /* Contenedor principal de la sección */
 .before-after-section {
-    background-color: var(--bg-light); /* Fondo claro para resaltar la sección */
+    background-color: var(--bg-light);
+    /* Fondo claro para resaltar la sección */
 }
 
 /* Grid para organizar múltiples controles deslizantes */
 .before-after-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-    gap: 40px; /* Espacio entre elementos */
-    margin-top: 40px; /* Espacio superior */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Columnas responsivas */
+    gap: 40px;
+    /* Espacio entre elementos */
+    margin-top: 40px;
+    /* Espacio superior */
 }
 
 /* Elemento individual de cada control deslizante */
 .before-after-item {
     display: flex;
-    flex-direction: column; /* Apilado vertical */
-    align-items: center; /* Centrado horizontal */
-    text-align: center; /* Texto centrado */
+    flex-direction: column;
+    /* Apilado vertical */
+    align-items: center;
+    /* Centrado horizontal */
+    text-align: center;
+    /* Texto centrado */
 }
 
 /*
@@ -1677,20 +1753,33 @@ img {
  * ESTE ES EL ELEMENTO QUE VISIBLEMENTE CONTIENE EL CONTROL
  */
 .before-after-container {
-    position: relative; /* Posicionamiento relativo para contener elementos absolutos */
+    position: relative;
+    /* Posicionamiento relativo para contener elementos absolutos */
     width: 100%;
-    max-width: 400px; /* Ancho máximo */
-    height: 300px; /* Altura fija */
-    margin: 0 auto 20px; /* Centrado horizontal y margen inferior */
-    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
-    border-radius: 20px; /* Bordes redondeados */
-    box-shadow: var(--shadow); /* Sombra del contenedor */
-    cursor: ew-resize; /* Cursor de desplazamiento horizontal */
-    z-index: 1; /* Nivel de apilamiento */
-    -ms-user-select: none; /* Evita que se seleccionen elementos al arrastrar */
-    -webkit-user-select: none; /* Para navegadores WebKit */
-    -moz-user-select: none; /* Para navegadores Firefox */
-    user-select: none; /* Para navegadores IE/Edge */
+    max-width: 400px;
+    /* Ancho máximo */
+    height: 300px;
+    /* Altura fija */
+    margin: 0 auto 20px;
+    /* Centrado horizontal y margen inferior */
+    overflow: hidden;
+    /* Oculta cualquier contenido que sobresalga */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    box-shadow: var(--shadow);
+    /* Sombra del contenedor */
+    cursor: ew-resize;
+    /* Cursor de desplazamiento horizontal */
+    z-index: 1;
+    /* Nivel de apilamiento */
+    -ms-user-select: none;
+    /* Evita que se seleccionen elementos al arrastrar */
+    -webkit-user-select: none;
+    /* Para navegadores WebKit */
+    -moz-user-select: none;
+    /* Para navegadores Firefox */
+    user-select: none;
+    /* Para navegadores IE/Edge */
 }
 
 /*
@@ -1700,19 +1789,22 @@ img {
  */
 .img-background,
 .img-foreground {
-    position: absolute; /* Posición absoluta dentro del contenedor */
+    position: absolute;
+    /* Posición absoluta dentro del contenedor */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Recorta la imagen al tamaño del contenedor */
+    overflow: hidden;
+    /* Recorta la imagen al tamaño del contenedor */
 }
 
 .img-background img,
 .img-foreground img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen manteniendo proporción */
+    object-fit: cover;
+    /* Ajusta la imagen manteniendo proporción */
     display: block;
 }
 
@@ -1721,34 +1813,50 @@ img {
  * Su ancho cambia dinámicamente según la posición del slider
  */
 .img-foreground {
-    width: 50%; /* Ancho inicial del 50% */
-    border-right: 3px solid var(--white); /* Línea divisoria blanca */
-    z-index: 2; /* Nivel superior para que esté sobre la imagen de fondo */
+    width: 50%;
+    /* Ancho inicial del 50% */
+    border-right: 3px solid var(--white);
+    /* Línea divisoria blanca */
+    z-index: 2;
+    /* Nivel superior para que esté sobre la imagen de fondo */
 }
 
 /* Etiquetas de texto para identificar cada imagen */
 .label {
-    position: absolute; /* Posición absoluta en el contenedor */
-    top: 20px; /* Distancia desde arriba */
-    padding: 5px 15px; /* Relleno interno */
-    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-    color: var(--white); /* Texto blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    font-size: 0.9rem; /* Tamaño de fuente */
-    font-weight: 600; /* Peso de fuente */
-    text-transform: uppercase; /* Mayúsculas */
-    pointer-events: none; /* No interfiere con los eventos de mouse */
-    z-index: 3; /* Nivel superior para estar sobre las imágenes */
+    position: absolute;
+    /* Posición absoluta en el contenedor */
+    top: 20px;
+    /* Distancia desde arriba */
+    padding: 5px 15px;
+    /* Relleno interno */
+    background: rgba(0, 0, 0, 0.6);
+    /* Fondo semitransparente */
+    color: var(--white);
+    /* Texto blanco */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    font-size: 0.9rem;
+    /* Tamaño de fuente */
+    font-weight: 600;
+    /* Peso de fuente */
+    text-transform: uppercase;
+    /* Mayúsculas */
+    pointer-events: none;
+    /* No interfiere con los eventos de mouse */
+    z-index: 3;
+    /* Nivel superior para estar sobre las imágenes */
 }
 
 /* Etiqueta de "antes" (izquierda) */
 .label-before {
-    left: 20px; /* Posición desde la izquierda */
+    left: 20px;
+    /* Posición desde la izquierda */
 }
 
 /* Etiqueta de "después" (derecha) */
 .label-after {
-    right: 20px; /* Posición desde la derecha */
+    right: 20px;
+    /* Posición desde la derecha */
 }
 
 /*
@@ -1756,71 +1864,110 @@ img {
  * Este es el elemento que el usuario arrastra para revelar la imagen
  */
 .slider-handle {
-    position: absolute; /* Posición absoluta en el contenedor */
-    top: 0; /* Alineado arriba */
-    left: 50%; /* Inicialmente centrado (50%) */
-    height: 100%; /* Altura completa del contenedor */
-    width: 40px; /* Ancho del área de interacción */
-    transform: translateX(-50%); /* Centrado horizontal preciso */
-    z-index: 10; /* Nivel superior para interacción */
-    display: flex; /* Layout flexible */
-    flex-direction: column; /* Apilado vertical */
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-    cursor: grab; /* Cursor de agarre */
+    position: absolute;
+    /* Posición absoluta en el contenedor */
+    top: 0;
+    /* Alineado arriba */
+    left: 50%;
+    /* Inicialmente centrado (50%) */
+    height: 100%;
+    /* Altura completa del contenedor */
+    width: 40px;
+    /* Ancho del área de interacción */
+    transform: translateX(-50%);
+    /* Centrado horizontal preciso */
+    z-index: 10;
+    /* Nivel superior para interacción */
+    display: flex;
+    /* Layout flexible */
+    flex-direction: column;
+    /* Apilado vertical */
+    justify-content: center;
+    /* Centrado vertical */
+    align-items: center;
+    /* Centrado horizontal */
+    cursor: grab;
+    /* Cursor de agarre */
 }
 
 /* Línea vertical del slider */
 .handle-line {
-    width: 2px; /* Ancho delgada línea */
-    height: 100%; /* Altura completa */
-    background-color: var(--white); /* Color blanco */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    width: 2px;
+    /* Ancho delgada línea */
+    height: 100%;
+    /* Altura completa */
+    background-color: var(--white);
+    /* Color blanco */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
 }
 
 /* Círculo central del control deslizante */
 .handle-circle {
-    position: absolute; /* Posición absoluta */
-    width: 40px; /* Ancho */
-    height: 40px; /* Altura */
-    background-color: var(--primary-color); /* Color primario de la marca */
-    border: 3px solid var(--white); /* Borde blanco */
-    border-radius: 50%; /* Forma circular */
-    display: flex; /* Layout flexible */
-    align-items: center; /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal */
-    color: var(--white); /* Color del icono */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
-    transition: cursor 0.2s ease; /* Transición al cambiar cursor */
+    position: absolute;
+    /* Posición absoluta */
+    width: 40px;
+    /* Ancho */
+    height: 40px;
+    /* Altura */
+    background-color: var(--primary-color);
+    /* Color primario de la marca */
+    border: 3px solid var(--white);
+    /* Borde blanco */
+    border-radius: 50%;
+    /* Forma circular */
+    display: flex;
+    /* Layout flexible */
+    align-items: center;
+    /* Centrado vertical */
+    justify-content: center;
+    /* Centrado horizontal */
+    color: var(--white);
+    /* Color del icono */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+    transition: cursor 0.2s ease;
+    /* Transición al cambiar cursor */
 }
 
 /* Cambio de cursor cuando se está arrastrando */
 .slider-handle:active,
 .handle-circle:active {
-    cursor: grabbing; /* Cursor de arrastre activo */
+    cursor: grabbing;
+    /* Cursor de arrastre activo */
 }
 
 /* Sección de descripción debajo del control deslizante */
 .result-description {
-    text-align: center; /* Texto centrado */
-    margin-top: 15px; /* Margen superior */
+    text-align: center;
+    /* Texto centrado */
+    margin-top: 15px;
+    /* Margen superior */
 }
 
 .result-description h4 {
-    margin-bottom: 8px; /* Margen inferior */
-    color: var(--primary-color); /* Color primario */
-    font-size: 1.2rem; /* Tamaño de fuente */
-    font-weight: 600; /* Peso de fuente */
+    margin-bottom: 8px;
+    /* Margen inferior */
+    color: var(--primary-color);
+    /* Color primario */
+    font-size: 1.2rem;
+    /* Tamaño de fuente */
+    font-weight: 600;
+    /* Peso de fuente */
 }
 
 .result-description p {
-    color: var(--light-text); /* Color de texto secundario */
-    font-size: 0.9rem; /* Tamaño de fuente */
-    margin: 0; /* Sin márgenes */
+    color: var(--light-text);
+    /* Color de texto secundario */
+    font-size: 0.9rem;
+    /* Tamaño de fuente */
+    margin: 0;
+    /* Sin márgenes */
 }
 
 /* ESTILOS RESPONSIVES PARA DISPOSITIVOS MÓVILES */
 @media (max-width: 768px) {
+
     /* Altura reducida para pantallas pequeñas */
     .before-after-container {
         height: 250px;
@@ -1828,8 +1975,10 @@ img {
 
     /* Diseño de una sola columna */
     .before-after-grid {
-        grid-template-columns: 1fr; /* Una sola columna */
-        gap: 30px; /* Espacio reducido entre elementos */
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        gap: 30px;
+        /* Espacio reducido entre elementos */
     }
 }
 
@@ -2221,37 +2370,56 @@ img {
     box-shadow: 0 5px 20px rgba(212, 165, 165, 0.4);
 }
 
-/* GOOGLE REVIEWS */
+/* GOOGLE REVIEWS REDESIGN */
 .google-reviews-container {
     background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    max-width: 1000px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    /* Sombra más suave y moderna */
+    max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.google-reviews-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    /* Colores oficiales Google */
 }
 
 .google-rating-summary {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .google-logo-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #5f6368;
+    gap: 12px;
+    margin-bottom: 5px;
 }
 
 .google-logo-row img {
-    height: 24px;
+    height: 32px;
     width: auto;
+}
+
+.google-logo-row span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #5f6368;
 }
 
 .rating-score {
@@ -2259,100 +2427,139 @@ img {
     align-items: center;
     gap: 15px;
     margin-bottom: 15px;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f3f4;
 }
 
 .rating-score .score {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--black);
-    line-height: 1;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #202124;
+}
+
+.rating-score .stars {
+    display: flex;
+    gap: 4px;
 }
 
 .rating-score .stars i {
     color: #fbbc04;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .review-link {
     color: #1a73e8;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-decoration: none;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
 .review-link:hover {
-    text-decoration: underline;
+    background: #f1f8fe;
 }
 
 .google-reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
     margin-bottom: 30px;
 }
 
 .google-review-card {
-    background: #f8f9fa;
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid #e8e8e8;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.google-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #d2e3fc;
 }
 
 .review-header {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    position: relative;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .reviewer-photo {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reviewer-info {
+    flex: 1;
 }
 
 .reviewer-info h4 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 2px;
-    color: var(--black);
-    font-weight: 600;
+    color: #202124;
+    font-weight: 700;
 }
 
 .reviewer-info .review-date {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #70757a;
+    display: block;
 }
 
 .google-icon-small {
-    width: 18px;
-    height: 18px;
-    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
 }
 
 .review-stars {
     color: #fbbc04;
-    font-size: 0.85rem;
-    margin-bottom: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 2px;
 }
 
 .review-text {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 0.95rem;
+    color: #4b4f56;
+    line-height: 1.6;
+    flex-grow: 1;
+    font-weight: 400;
 }
 
-.google-reviews-cta {
-    text-align: center;
+/* Efecto "Leer más" visual */
+.review-text::after {
+    content: '';
+    display: block;
+    height: 0;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {
     .google-reviews-grid {
         grid-template-columns: 1fr;
+    }
+
+    .google-reviews-container {
+        padding: 25px;
+        margin: 0 15px;
     }
 }
 
@@ -2404,13 +2611,15 @@ img {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow to the icon */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Adding a subtle shadow to the icon */
 }
 
 .gold-card {
     background: linear-gradient(to bottom right, #BF953F, #FBF5B7, #AA771C);
     color: black !important;
-    box-shadow: 0 10px 40px rgba(191, 149, 63, 0.6); /* Using gold rgba with higher opacity */
+    box-shadow: 0 10px 40px rgba(191, 149, 63, 0.6);
+    /* Using gold rgba with higher opacity */
 }
 
 .gold-card i {
@@ -2418,17 +2627,208 @@ img {
 }
 
 .gold-card:hover {
-    transform: translateY(-10px) scale(1.05); /* Adding a scale effect on hover */
-    box-shadow: 0 20px 50px rgba(191, 149, 63, 0.8); /* Using gold rgba with higher opacity for hover */
-    border-color: #BF953F !important; /* Make the border gold on hover */
+    transform: translateY(-10px) scale(1.05);
+    /* Adding a scale effect on hover */
+    box-shadow: 0 20px 50px rgba(191, 149, 63, 0.8);
+    /* Using gold rgba with higher opacity for hover */
+    border-color: #BF953F !important;
+    /* Make the border gold on hover */
 }
 
 .gold-card h3 {
     color: black !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) !important; /* Stronger shadow */
-    font-weight: 700 !important; /* Make it bolder */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) !important;
+    /* Stronger shadow */
+    font-weight: 700 !important;
+    /* Make it bolder */
 }
+
 .gold-card p {
     color: black !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important; /* Stronger shadow for paragraph */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+    /* Stronger shadow for paragraph */
+}
+
+/* ========================================
+   SECCIÓN PROCESO DE VIAJE / TURISMO
+   ======================================== */
+
+.process-section {
+    position: relative;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.process-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 20px;
+    padding: 20px 0;
+}
+
+/* Línea central vertical */
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, var(--bg-light), var(--primary-color), var(--bg-light));
+    transform: translateX(-50%);
+}
+
+.process-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+    width: 100%;
+}
+
+/* Icono central */
+.process-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 0 0 8px var(--white);
+    /* Halo blanco para separar de la línea */
+    font-size: 28px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.process-step:hover .process-icon {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 0 8px var(--white), 0 5px 15px rgba(212, 165, 165, 0.4);
+}
+
+/* Contenido (Tarjeta) */
+.process-content {
+    width: 45%;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+    transition: var(--transition);
+    position: relative;
+}
+
+.process-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(74, 52, 40, 0.12);
+}
+
+.process-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.process-content p {
+    color: var(--light-text);
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Lado impares (Texto a la izquierda) */
+.process-step:nth-child(odd) {
+    flex-direction: row;
+}
+
+.process-step:nth-child(odd) .process-content {
+    text-align: right;
+    border-top: none;
+    border-right: 4px solid var(--primary-color);
+}
+
+/* Lado pares (Texto a la derecha) */
+.process-step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.process-step:nth-child(even) .process-content {
+    text-align: left;
+    border-top: none;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Estilo para el número de paso opcional */
+.step-number {
+    position: absolute;
+    top: -15px;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--bg-light);
+    line-height: 1;
+    z-index: 0;
+}
+
+.process-step:nth-child(odd) .step-number {
+    right: 20px;
+}
+
+.process-step:nth-child(even) .step-number {
+    left: 20px;
+}
+
+/* RESPONSIVE PARA EL PROCESO */
+@media (max-width: 768px) {
+    .process-timeline::before {
+        left: 30px;
+        /* Línea a la izquierda */
+    }
+
+    .process-step {
+        flex-direction: row !important;
+        /* Siempre fila */
+        justify-content: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .process-icon {
+        left: 30px;
+        /* Icono alineado a la izquierda */
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        box-shadow: 0 0 0 5px var(--white);
+    }
+
+    .process-step:hover .process-icon {
+        box-shadow: 0 0 0 5px var(--white), 0 5px 15px rgba(212, 165, 165, 0.4);
+    }
+
+    .process-content {
+        width: calc(100% - 80px);
+        /* Ancho restante */
+        margin-left: 80px;
+        /* Espacio para el icono */
+        text-align: left !important;
+        /* Siempre texto izquierda */
+        border-right: none !important;
+        border-left: 4px solid var(--primary-color) !important;
+        padding: 20px;
+    }
+
+    .process-step:nth-child(odd) .step-number,
+    .process-step:nth-child(even) .step-number {
+        right: 20px;
+        left: auto;
+    }
 }

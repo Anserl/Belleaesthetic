@@ -25,9 +25,9 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="turismo-estetico.html" class="active">Turismo Estético</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -36,146 +36,192 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-image-container">
-            <div class="hero-image-overlay"></div>
-            <img src="img/hero_logo_image.png" alt="Turismo Estético">
-        </div>
-    </section>
-    <section class="hero-text-content">
-        <div class="container">
+    <!-- HERO TURISMO REDISEÑADO -->
+    <section class="hero-turismo">
+        <div class="hero-turismo-content">
+            <span class="badge">MEDELLÍN, COLOMBIA</span>
             <h1>Turismo Estético</h1>
-            <p>Transforma tu cuerpo mientras disfrutas de un destino paradisíaco.</p>
+            <p>Transforma tu cuerpo mientras disfrutas de unas vacaciones inolvidables en el destino líder de salud y
+                belleza.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/+573116188733" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Escríbenos al WhatsApp</a>
-                <a href="https://www.instagram.com/belle.estetica.med?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Síguenos en Instagram</a>
+                <a href="https://wa.me/+573116188733" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Planear mi Viaje
+                </a>
+                <a href="#process-section" class="btn btn-white">
+                    <i class="fas fa-info-circle"></i> Cómo Funciona
+                </a>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-                    <div class="section-header text-center">
-                        <br>
-                        <h2>¿Por qué elegirnos?</h2>
-                        <p>La combinación perfecta entre salud, belleza y descanso</p>
-                        <br>
-                    </div>            <div class="services-grid">
+            <div class="section-header text-center">
+                <br>
+                <h2>¿Por qué elegirnos?</h2>
+                <p>La combinación perfecta entre salud, belleza y descanso</p>
+                <br>
+            </div>
+            <div class="services-grid">
                 <div class="service-card text-center">
-                    <div class="icon"><i class="fas fa-user-md"></i></div>
+                    <div class="icon" style="color: var(--primary-color);"><i class="fas fa-user-md"></i></div>
                     <h3>Especialistas Certificados</h3>
-                    <p>Contamos con un equipo médico de primer nivel con reconocimiento internacional.</p>
+                    <p>Contamos con un equipo médico de primer nivel con reconocimiento internacional y amplia
+                        experiencia.</p>
+                </div>
+                <div class="service-card text-center">
+                    <div class="icon" style="color: var(--accent-color);"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Ahorro Inteligente</h3>
+                    <p>Accede a procedimientos premium con un ahorro de hasta el 60% comparado con EE.UU. o Europa.</p>
+                </div>
+                <div class="service-card text-center">
+                    <div class="icon" style="color: var(--primary-dark);"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Servicio Integral</h3>
+                    <p>Nos encargamos de todo: desde tu transporte y alojamiento hasta tu recuperación post-operatoria.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS ESTÉTICOS -->
-    <section id="servicios" class="section section-bg-light">
+    <!-- NUEVA SECCION: DESCUBRE MEDELLÍN (FONDO VERDE) -->
+    <section class="section section-bg-green">
         <div class="container">
-            <div class="section-header">
-                <h2>Nuestros Servicios Estéticos</h2>
-                <p>Tratamientos especializados con tecnología de punta</p>
+            <div class="section-header text-center">
+                <h2>Medellín: Tu destino de bienestar</h2>
+                <p>La ciudad de la eterna primavera te espera</p>
+            </div>
+            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        Medellín ha sido reconocida mundialmente como uno de los destinos más atractivos para el turismo
+                        médico y vacacional. Su c<b>lima primaveral todo el año</b> favorece una recuperación cómoda y
+                        placentera.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span>Infraestructura médica de clase mundial y acreditada.</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span>Conectividad aérea directa con las principales ciudades.</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span>Oferta gastronómica y cultural vibrante para tus acompañantes.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="img/Medellin.jpg" alt="Medellín Ciudad"
+                        style="border-radius: 15px; box-shadow: var(--shadow-green);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROCESO DE VIAJE -->
+    <section id="process-section" class="section process-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Tu Viaje de Transformación</h2>
+                <p>Una experiencia sin preocupaciones, paso a paso</p>
+                <br>
             </div>
 
-            <div class="services-grid">
-                <!-- Servicio 1: Tratamientos Faciales -->
-                <div class="service-card service-minimal">
-                    <div class="service-icon-wrapper icon-facial">
-                        <i class="fas fa-spa"></i>
+            <div class="process-timeline">
+                <!-- Paso 1 -->
+                <div class="process-step">
+                    <div class="process-icon" style="background-color: var(--accent-light); color: var(--accent-dark);">
+                        <i class="fas fa-laptop-medical"></i>
                     </div>
-                    <h3>Tratamientos Faciales</h3>
-                    <p class="service-subtitle">Limpiezas profundas y rejuvenecimiento</p>
-                    <ul class="service-details">
-                        <li>Limpieza facial profunda</li>
-                        <li>Hidratación intensiva</li>
-                        <li>Rejuvenecimiento con ácido hialurónico</li>
-                        <li>Tratamientos anti-edad personalizados</li>
-                        <li>Peeling químico</li>
-                        <li>Microdermoabrasión</li>
-                    </ul>
-                    <div class="service-price">Desde $80.000 COP</div>
+                    <div class="process-content">
+                        <span class="step-number" style="color: var(--accent-color);">01</span>
+                        <h3>Valoración Virtual</h3>
+                        <p>Envíanos tus fotos y expectativas desde casa. Nuestro equipo médico evaluará tu caso y te
+                            brindará un plan preliminar detallado.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 2: Tratamientos Corporales -->
-                <div class="service-card service-minimal">
-                    <div class="service-icon-wrapper icon-body">
-                        <i class="fas fa-leaf"></i>
+                <!-- Paso 2 -->
+                <div class="process-step">
+                    <div class="process-icon"
+                        style="background-color: var(--secondary-color); color: var(--primary-dark);">
+                        <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <h3>Tratamientos Corporales</h3>
-                    <p class="service-subtitle">Tonificación y reducción de medidas</p>
-                    <ul class="service-details">
-                        <li>Reducción de medidas</li>
-                        <li>Masajes reductores</li>
-                        <li>Tonificación muscular</li>
-                        <li>Drenaje linfático</li>
-                        <li>Cavitación ultrasónica</li>
-                        <li>Radiofrecuencia corporal</li>
-                    </ul>
-                    <div class="service-price">Desde $120.000 COP</div>
+                    <div class="process-content">
+                        <span class="step-number">02</span>
+                        <h3>Planificación Personalizada</h3>
+                        <p>Coordinamos fechas, presupuestos y logística. Te ayudamos a organizar tu itinerario de vuelo
+                            y opciones de hospedaje cercano.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 3: Estética Avanzada -->
-                <div class="service-card service-minimal">
-                    <div class="service-icon-wrapper icon-advanced">
-                        <i class="fas fa-syringe"></i>
+                <!-- Paso 3 -->
+                <div class="process-step">
+                    <div class="process-icon" style="background-color: var(--accent-light); color: var(--accent-dark);">
+                        <i class="fas fa-plane-arrival"></i>
                     </div>
-                    <h3> Medicina Estética Avanzada</h3>
-                    <p class="service-subtitle">Procedimientos de última generación</p>
-                    <ul class="service-details">
-                        <li>Botox (toxina botulínica)</li>
-                        <li>Rellenos dérmicos</li>
-                        <li>Hilos tensores PDO</li>
-                        <li>Plasma rico en plaquetas (PRP)</li>
-                        <li>Tratamientos láser</li>
-                        <li>Bioestimulación facial</li>
-                        <li>Mesoterapia facial y corporal</li>
-                        <li>Bioestimulación con colágeno</li>
-                        <li>Peeling químico avanzado</li>
-                        <li>Tratamientos despigmentantes</li>
-                        <li>Carboxiterapia</li>
-                        <li>Vitaminas endovenosas</li>
-                    </ul>
-                    <div class="service-price">Desde $250.000 COP</div>
+                    <div class="process-content">
+                        <span class="step-number" style="color: var(--accent-color);">03</span>
+                        <h3>Llegada VIP</h3>
+                        <p>Bienvenida a Medellín. Si lo deseas, coordinamos tu transporte privado desde el aeropuerto
+                            directo a tu hotel o a la clínica.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 6: Tratamientos Capilares -->
-                <div class="service-card service-minimal">
-                    <div class="service-icon-wrapper icon-hair">
-                        <i class="fas fa-cut"></i>
+                <!-- Paso 4 -->
+                <div class="process-step">
+                    <div class="process-icon"
+                        style="background-color: var(--secondary-color); color: var(--primary-dark);">
+                        <i class="fas fa-user-md"></i>
                     </div>
-                    <h3>Tratamientos Capilares</h3>
-                    <p class="service-subtitle">Restauración y fortalecimiento capilar</p>
-                    <ul class="service-details">
-                        <li>Restauración capilar</li>
-                        <li>Mesoterapia capilar</li>
-                        <li>Tratamiento anti-caída</li>
-                        <li>PRP capilar</li>
-                        <li>Fortalecimiento del cuero cabelludo</li>
-                        <li>Resultados visibles en 3 meses</li>
-                    </ul>
-                    <div class="service-price">Desde $180.000 COP</div>
+                    <div class="process-content">
+                        <span class="step-number">04</span>
+                        <h3>Tu Procedimiento</h3>
+                        <p>Realización de tus tratamientos con tecnología de punta y seguridad garantizada. Todo en
+                            nuestras certificadas instalaciones.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 7: Masajes Terapéuticos -->
-                <div class="service-card service-minimal">
-                    <div class="service-icon-wrapper icon-massage">
-                        <i class="fas fa-hands"></i>
+                <!-- Paso 5 -->
+                <div class="process-step">
+                    <div class="process-icon" style="background-color: var(--accent-light); color: var(--accent-dark);">
+                        <i class="fas fa-umbrella-beach"></i>
                     </div>
-                    <h3>Masajes Terapéuticos</h3>
-                    <p class="service-subtitle">Relajación y bienestar integral</p>
-                    <ul class="service-details">
-                        <li>Masajes relajantes</li>
-                        <li>Masajes descontracturantes</li>
-                        <li>Drenaje linfático manual</li>
-                        <li>Masajes reductores</li>
-                        <li>Terapia de tejido profundo</li>
-                        <li>Aromaterapia incluida</li>
-                    </ul>
-                    <div class="service-price">Desde $90.000 COP</div>
+                    <div class="process-content">
+                        <span class="step-number" style="color: var(--accent-color);">05</span>
+                        <h3>Recuperación y Turismo</h3>
+                        <p>Disfruta de una recuperación tranquila. Dependiendo de tu procedimiento, podrás conocer los
+                            encantos turísticos de la ciudad.</p>
+                    </div>
                 </div>
 
+                <!-- Paso 6 -->
+                <div class="process-step">
+                    <div class="process-icon"
+                        style="background-color: var(--secondary-color); color: var(--primary-dark);">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="process-content">
+                        <span class="step-number">06</span>
+                        <h3>Regreso Seguro</h3>
+                        <p>Valoración final para el alta. Regresas a casa renovada/o y con seguimiento médico virtual
+                            continuo.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA A LOS SERVICIOS -->
+    <section class="section section-bg-light text-center">
+        <div class="container">
+            <h2>¿Quieres conocer nuestros tratamientos?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px;">Ofrecemos una amplia gama de procedimientos faciales,
+                corporales y medicina estética avanzada.</p>
+            <a href="servicios.html" class="btn btn-primary">Ver Catálogo de Servicios</a>
         </div>
     </section>
 
@@ -186,19 +232,21 @@
                 <h3>Belle<span>Aesthetic</span></h3>
                 <p>Tu destino para la belleza y el bienestar integral.</p>
                 <div class="social-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en Instagram" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en Facebook"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en Instagram"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Síguenos en TikTok"
+                        aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="turismo-estetico.html" class="active">Turismo Estético</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-
                 </ul>
             </div>
             <div class="footer-col">
@@ -218,8 +266,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a href="https://www.instagram.com/belle.estetica.med?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="instagram-float" target="_blank" rel="noopener noreferrer"
-        title="Síguenos en Instagram" aria-label="Instagram">
+    <a href="https://www.instagram.com/belle.estetica.med?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        class="instagram-float" target="_blank" rel="noopener noreferrer" title="Síguenos en Instagram"
+        aria-label="Instagram">
         <i class="fab fa-instagram"></i>
     </a>
 
