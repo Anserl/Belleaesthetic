@@ -119,20 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuramos el observador
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // Si el elemento es visible en la pantalla
+            // entry.isIntersecting es true cuando el elemento entra en pantalla
             if (entry.isIntersecting) {
-                // Un pequeño retraso para asegurar que la clase reveal se aplique antes de active
+                // Añadimos la clase 'active' que dispara la animación CSS (ver style.css -> .reveal.active)
                 setTimeout(() => {
                     entry.target.classList.add('active');
                 }, 50);
 
-                // Dejamos de observar el elemento una vez animado (para que no se repita)
+                // Dejamos de observar para optimizar rendimiento (la animación solo ocurre una vez)
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        root: null, // Usamos el viewport como referencia
-        threshold: 0.15, // La animación se activa cuando el 15% del elemento es visible
+        root: null, // null indica que observa respecto a la ventana del navegador
+        threshold: 0.15, // Se activa cuando el 15% del elemento es visible
         rootMargin: "0px"
     });
 
@@ -208,7 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // --- 7. SLIDER ANTES Y DESPUÉS ---
+    // --- 7. SLIDER ANTES Y DESPUÉS (Control Remoto de Imágenes) ---
+    // Este código controla el deslizador horizontal de los resultados reales
     const sliderContainers = document.querySelectorAll('.before-after-container');
 
     sliderContainers.forEach(container => {
@@ -216,32 +217,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const foregroundImg = container.querySelector('.img-foreground');
         let isDragging = false;
 
-        // Función para actualizar la posición
+        // Función central: Mueve el control y recorta la imagen de arriba
         function updateSliderPosition(clientX) {
             const rect = container.getBoundingClientRect();
             let offsetX = clientX - rect.left;
 
-            // Limitar el movimiento dentro del contenedor
+            // Evitamos que el slider se salga de los bordes del cuadro
             if (offsetX < 0) offsetX = 0;
             if (offsetX > rect.width) offsetX = rect.width;
 
-            // Calcular porcentaje
+            // El porcentaje define cuánto se ve de la imagen "Después"
             const percentage = (offsetX / rect.width) * 100;
 
-            // Aplicar estilos
+            // Actualizamos la posición del control y el ancho de la capa superior
             sliderHandle.style.left = percentage + '%';
             foregroundImg.style.width = percentage + '%';
 
-            // Control de visibilidad de etiquetas
+            // CONTROL DE ETIQUETAS: Ocultamos los textos cuando el control pasa por encima
             const labelBefore = container.querySelector('.label-before');
             const labelAfter = container.querySelector('.label-after');
 
             if (labelBefore) {
-                // Ocultar "Antes" si el slider está muy a la izquierda
+                // Si el slider está muy a la izquierda, desvanecemos "Antes"
                 labelBefore.style.opacity = percentage < 15 ? '0' : '1';
             }
             if (labelAfter) {
-                // Ocultar "Después" si el slider está muy a la derecha
+                // Si el slider está muy a la derecha, desvanecemos "Después"
                 labelAfter.style.opacity = percentage > 85 ? '0' : '1';
             }
         }

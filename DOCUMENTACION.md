@@ -350,55 +350,57 @@ El sitio se adapta automáticamente a diferentes tamaños de pantalla:
 
 ---
 
-## 🛠️ MANTENIMIENTO Y MODIFICACIONES
+---
 
-### Cambiar textos:
-- Todos los textos están en los archivos `.html`
-- Busca el texto que quieres cambiar y edítalo directamente
+## ⚡ GUÍA DE MODIFICACIÓN RÁPIDA (PARA TI)
 
-### Cambiar colores:
-- Edita las variables en `style.css` líneas 6-28
-- Los cambios se aplicarán automáticamente en todo el sitio
+He diseñado esta sección para que puedas hacer cambios comunes sin tener que buscar en miles de líneas de código.
 
-### Cambiar imágenes:
-1. Reemplaza la imagen en la carpeta `img/`
-2. Usa el mismo nombre de archivo, o
-3. Actualiza la ruta en el HTML
+### 📌 1. ¿Cómo cambio los colores de la página?
+Toda la paleta de colores vive en `css/style.css`.
+*   **Pasos:** Abre el archivo, busca `:root` al principio y cambia los códigos hexadecimales (Ej: `#D4A5A5`).
+*   **Tip:** He dejado comentarios al lado de cada color indicando dónde se usa (ej: botones, textos, fondos).
 
-### Agregar nuevas secciones:
-1. Copia una sección existente similar
-2. Modifica el contenido
-3. Ajusta los estilos CSS si es necesario
+### 📌 2. ¿Cómo cambio el logo?
+1.  Pon tu nuevo logo en la carpeta `img/`.
+2.  Asegúrate de que se llame `Logo-letra-transparente.png` (reemplazando el anterior).
+3.  Si quieres usar otro nombre, deberás buscar la etiqueta `<img>` en el header de cada archivo HTML.
+
+### 📌 3. ¿Cómo actualizo la información de contacto (Teléfono/Dirección)?
+Debes hacerlo en tres lugares para que Google y los usuarios lo vean bien:
+1.  **En el Footer:** Al final de cada archivo HTML (`index.html`, etc.).
+2.  **En el Schema SEO:** Dentro de la etiqueta `<script type="application/ld+json">` en el `<head>` de cada archivo. Busca `"telephone"` y `"streetAddress"`.
+3.  **En la página de Contacto:** En `servicios.html` (al final, en la sección de ubicación).
+
+### 📌 4. ¿Cómo agrego o cambio un tratamiento?
+Los tratamientos están en `servicios.html`.
+*   Busca la sección `<!-- 3. CATÁLOGO DE SERVICIOS -->`.
+*   Cada tratamiento es un bloque con la clase `service-card`.
+*   Puedes copiar uno existente y cambiarle el nombre, el icono (de FontAwesome) y el texto.
+
+### 📌 5. ¿Cómo cambio las fotos de "Instalaciones"?
+Las fotos del carrusel están en `index.html`.
+*   Busca `<!-- 3. GALERÍA DE INSTALACIONES (Carrusel) -->`.
+*   Cada imagen tiene una etiqueta `<img>`. Cambia la ruta `src="img/foto.jpg"` por la de tu nueva foto.
+
+### 📌 6. ¿Cómo cambio las fotos de "Antes y Después"?
+*   Ve a `index.html` (o `turismo-estetico.html`).
+*   Busca `<!-- 4. RESULTADOS REALES -->`.
+*   Cambia las fuentes de imagen (`src`) dentro de `img-background` (Después) y `img-foreground` (Antes).
 
 ---
 
-## 🐛 SOLUCIÓN DE PROBLEMAS
+## 🛠️ ESTRUCTURA TÉCNICA RECOMENDADA
 
-### El carrusel no funciona:
-1. Verifica que `main.js` esté cargado correctamente
-2. Abre la consola del navegador (F12) y busca errores
-3. Asegúrate de que las clases CSS coincidan exactamente
+Para mantener el orden, siempre sigues esta jerarquía:
+1.  **HTML:** Estructura (el "esqueleto").
+2.  **CSS:** Diseño (el "maquillaje").
+3.  **JS:** Funcionalidad (el "movimiento").
 
-### Las imágenes no se ven:
-1. Verifica que las rutas sean correctas (`img/nombre-archivo.png`)
-2. Asegúrate de que los archivos existan en la carpeta
-3. Revisa que los nombres de archivo coincidan (mayúsculas/minúsculas)
-
-### Los colores no cambian:
-1. Verifica que estés editando el archivo correcto (`style.css`)
-2. Limpia la caché del navegador (Ctrl + F5)
-3. Asegúrate de usar el formato correcto (#RRGGBB)
+Si agregas una nueva sección, asegúrate de ponerle un comentario para saber qué es en el futuro.
 
 ---
 
-## 📞 CONTACTO Y SOPORTE
+**Última actualización**: 19 de Diciembre, 2025
+**Estado del Código**: Optimizado para SEO - Comentado - 100% Funcional
 
-Si necesitas ayuda adicional:
-1. Revisa esta documentación primero
-2. Busca en los comentarios del código
-3. Consulta con el equipo de desarrollo
-
----
-
-**Última actualización**: Diciembre 2024
-**Versión**: 2.0

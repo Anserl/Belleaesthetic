@@ -98,18 +98,25 @@
 
     /* ===== UTILIDADES ===== */
 
-    /* SOMBRA CON TONO CÁLIDO */
+    /* SOMBRA CON TONO CÁLIDO (Marrón suave) */
     --shadow: 0 10px 40px rgba(74, 52, 40, 0.15);
     /* Se usa en: tarjetas, carruseles, elementos elevados */
 
     /* SOMBRA VERDE SUAVE */
     --shadow-green: 0 10px 40px rgba(168, 181, 160, 0.15);
-    /* Se usa en: elementos con acento verde */
+    /* Se usa en: elementos con acento verde (Wellness) */
 
-    /* TRANSICIÓN ESTÁNDAR */
+    /* TRANSICIÓN ESTÁNDAR - Suaviza todos los movimientos y cambios de color */
     --transition: all 0.4s ease;
     /* Se usa en: todos los efectos hover y animaciones */
 }
+
+/* 
+   ========================================
+   2. ESTILOS BASE Y RESET
+   ========================================
+   Configuración global para que todo se vea igual en todos los navegadores.
+*/
 
 
 * {
@@ -160,13 +167,19 @@ img {
     display: block;
 }
 
+/* CONTENEDOR PRINCIPAL - Centra el contenido y añade márgenes laterales */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* BOTONES */
+/* 
+   ========================================
+   3. BOTONES Y ACCIONES
+   ========================================
+   Estilos para los diferentes tipos de botones del sitio.
+*/
 .btn {
     display: inline-block;
     padding: 14px 35px;
@@ -228,6 +241,7 @@ img {
     width: 100%;
 }
 
+/* CLASES DE UTILIDAD */
 .text-center {
     text-align: center;
 }
@@ -238,7 +252,12 @@ img {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ANIMACIONES */
+/* 
+   ========================================
+   4. ANIMACIONES Y EFECTOS
+   ========================================
+   Definición de movimientos y apariciones visuales.
+*/
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -261,6 +280,7 @@ img {
     }
 }
 
+/* REVEAL ON SCROLL - Esta clase hace que los elementos aparezcan al bajar la página */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -272,7 +292,11 @@ img {
     transform: translateY(0);
 }
 
-/* HERO SECTION */
+/* 
+   ========================================
+   5. HERO SECTION (Cabecera de página)
+   ========================================
+*/
 .hero {
     height: auto;
     padding: 80px 20px 40px;
@@ -469,7 +493,12 @@ img {
     }
 }
 
-/* HERO TURISMO - NUEVO DISEÑO INMERSIVO */
+/* 
+   ========================================
+   6. HERO TURISMO (Diseño Inmersivo)
+   ========================================
+   Estilos específicos para la página de Turismo Estético.
+*/
 .hero-turismo {
     position: relative;
     min-height: 85vh;
@@ -480,6 +509,7 @@ img {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    /* Mantiene la imagen fija al hacer scroll (Efecto Parallax) */
     margin-bottom: 0;
     padding: 0 20px;
     text-align: center;
@@ -542,11 +572,17 @@ img {
     }
 }
 
-/* HEADER */
+/* 
+   ========================================
+   7. HEADER Y NAVEGACIÓN
+   ========================================
+   Controla el logo y el menú principal que aparece en todas las páginas.
+*/
 .header {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 242, 232, 0.95));
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+    /* Efecto vidrio esmerilado */
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -600,6 +636,7 @@ img {
     padding: 5px 0;
 }
 
+/* ESTILO DE LOS ENLACES DEL MENÚ */
 .nav-list a {
     font-weight: 600;
     color: var(--text-color);
@@ -653,8 +690,15 @@ img {
 /* EFECTO DE FONDO AL PASAR EL MOUSE */
 
 
+/* 
+   ========================================
+   8. MENÚ MÓVIL (Hamburguesa)
+   ========================================
+   Estilos que se activan solo en dispositivos móviles.
+*/
 .mobile-menu-btn {
     display: none;
+    /* Se oculta por defecto en desktop */
     font-size: 28px;
     cursor: pointer;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -780,7 +824,12 @@ img {
     justify-content: center;
 }
 
-/* PAGE HEADERS */
+/* 
+   ========================================
+   9. CABECERAS DE PÁGINA (Interiores)
+   ========================================
+   Estilo para el título superior en las páginas de Nosotros y Servicios.
+*/
 .page-header {
     background-size: cover;
     background-position: center;
@@ -792,6 +841,14 @@ img {
 
 .page-header-nosotros {
     background-image: url("../img/clinic_reception2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 150px 0;
+}
+
+.page-header-servicios {
+    background-image: url("../img/salon_tratamiento.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -826,6 +883,12 @@ img {
     padding: 20px;
 }
 
+/* 
+   ========================================
+   10. TARJETAS DE SERVICIOS
+   ========================================
+   Estilo de los cuadros que muestran cada tratamiento.
+*/
 .service-card {
     background: var(--white);
     padding: 40px 20px;
@@ -918,6 +981,11 @@ img {
     transform: scale(1.02);
 }
 
+/* 
+   ========================================
+   11. SECCIÓN DE EQUIPO (Nosotros)
+   ========================================
+*/
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -962,7 +1030,11 @@ img {
     letter-spacing: 1px;
 }
 
-/* PÁGINA CONTACTO */
+/* 
+   ========================================
+   12. PÁGINA DE CONTACTO Y FORMULARIOS
+   ========================================
+*/
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1125,7 +1197,11 @@ img {
     opacity: 0.95;
 }
 
-/* FOOTER */
+/* 
+   ========================================
+   13. FOOTER (Pie de Página)
+   ========================================
+*/
 .footer {
     background-color: var(--black);
     color: var(--white);
