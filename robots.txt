@@ -1,18 +1,3 @@
-# robots.txt para Belle Aesthetic Medical Center
-# Este archivo indica a los motores de búsqueda qué pueden y no pueden rastrear
-
-# Permitir acceso a todos los bots
 User-agent: *
-
-# Permitir rastreo de todo el sitio
 Allow: /
-
-# Bloquear archivos de respaldo y desarrollo
-Disallow: /nosotros_backup.html
-Disallow: /*.json$
-
-# Ubicación del Sitemap
 Sitemap: https://belleaesthetic.com/sitemap.xml
-
-# Tiempo de espera entre rastreos (en segundos)
-Crawl-delay: 1

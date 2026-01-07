@@ -3093,7 +3093,7 @@ img {
     position: relative;
     list-style: none;
     /* Ocultar marcador default */
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.2s;
@@ -3128,7 +3128,7 @@ img {
     padding: 5px 0 10px 25px;
     margin: 0;
     line-height: 1.4;
-    font-style: italic;
+    /* font-style: italic; */
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(248, 242, 232, 0.3));
 }
 
