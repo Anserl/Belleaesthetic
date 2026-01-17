@@ -3284,3 +3284,52 @@ img {
         font-size: 1.1rem;
     }
 }
+
+/* 
+   SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) - OPTIMIZACIÓN AEO
+   Estilos diseñados para una visualización premium de las FAQs, 
+   mejorando la experiencia de usuario y la relevancia para IAs.
+*/
+.faq-section {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    background: var(--bg-light, #f9f9f9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color, #2c3e50);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item h3 i {
+    color: var(--accent-color, #e74c3c);
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    line-height: 1.6;
+    color: #666;
+    font-size: 0.95rem;
+}

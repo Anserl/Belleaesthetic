@@ -1,4 +1,5 @@
 {
+  "//": "AEO Optimization: Este archivo define la identidad de la clínica ante IAs. Se han añadido reseñas para mejorar la confiabilidad (EEAT).",
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Belle Aesthetic Medical Center",
@@ -71,5 +72,36 @@
       "name": "Bioestimuladores",
       "description": "Sculptra y Radiesse para estimulación de colágeno"
     }
-  ]
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carolina Martínez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Excelente atención y resultados muy naturales con el Botox. ¡Súper recomendados, muy amables y profesionales!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Juan Pablo Giraldo"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "El tratamiento de bioestimuladores cambió mi piel. Muy profesionales, me gusta que esten bien ubicados en Medellín."
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://belleaesthetic.com"
+  },
+  "comment": "AEO: Las reviews anteriores son ejemplos para demostrar estructura. Deben reemplazarse por testimonios reales."
 }

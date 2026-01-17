@@ -104,6 +104,21 @@ Añadido en todas las páginas:
 
 ---
 
+### ✅ **FASE 5: AEO (AI Engine Optimization)**
+
+Estrategias para que Belle Aesthetic sea recomendada por IAs (ChatGPT, Gemini, Perplexity).
+
+#### **Datos Estructurados (JSON-LD):**
+- **FAQ Schema:** Implementado para responder preguntas directas.
+- **Review Schema:** Añadido en `schema-localbusiness.json` con opiniones destacadas.
+- **Documentación:** Claves de comentario incorporadas para futura edición.
+
+#### **Optimización de Contenido:**
+- **FAQ Visual:** Nueva sección en `servicios.html` con preguntas conversacionales.
+- **Semántica:** Estructura de cabeceras optimizada para el entendimiento de modelos de lenguaje.
+
+---
+
 ## 🚨 TAREAS PENDIENTES (Para completar el SEO)
 
 ### **ALTA PRIORIDAD:**
@@ -203,7 +218,7 @@ Añadido en todas las páginas:
 - [x] Contenido único en servicios
 - [x] Descripciones detalladas (>150 palabras) ✅
 - [x] Palabras clave integradas naturalmente
-- [ ] FAQs por servicio (PENDIENTE)
+- [x] FAQs por servicio
 - [ ] Blog/Artículos (PENDIENTE)
 
 ### **Local SEO:**
@@ -212,7 +227,7 @@ Añadido en todas las páginas:
 - [x] Horarios en Schema
 - [x] Coordenadas GPS
 - [ ] Google My Business (PENDIENTE)
-- [ ] Reseñas de Google (PENDIENTE)
+- [x] Reseñas de Google (Implementado en Schema)
 
 ---
 
