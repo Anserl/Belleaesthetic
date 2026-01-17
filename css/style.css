@@ -3307,20 +3307,40 @@ img {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .faq-item:hover {
     transform: translateY(-5px);
+    background: var(--white);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item summary {
+    list-style: none;
+    display: block;
+    outline: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
 }
 
 .faq-item h3 {
     font-size: 1.2rem;
     color: var(--primary-color, #2c3e50);
-    margin-bottom: 15px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.faq-item[open] h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
 }
 
 .faq-item h3 i {
@@ -3328,8 +3348,35 @@ img {
     font-size: 1.1rem;
 }
 
+/* Flecha indicadora */
+.faq-item h3::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] h3::after {
+    transform: rotate(180deg);
+}
+
 .faq-item p {
     line-height: 1.6;
     color: #666;
     font-size: 0.95rem;
+    margin-top: 10px;
+    animation: fadeInDown 0.4s ease both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

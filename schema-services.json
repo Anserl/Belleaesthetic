@@ -3,7 +3,7 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Servicios de Medicina Estética - Belle Aesthetic Medellín",
-    "description": "Catálogo completo de tratamientos de medicina estética disponibles en Belle Aesthetic Medical Center",
+    "description": "Catálogo completo de protocolos de medicina estética disponibles en Belle Aesthetic Medical Center",
     "itemListElement": [
         {
             "@type": "ListItem",
@@ -69,7 +69,7 @@
             "item": {
                 "@type": "Service",
                 "name": "Mesoterapia Capilar",
-                "description": "Tratamiento para frenar la caída del cabello y estimular el crecimiento capilar.",
+                "description": "Protocolo para frenar la caída del cabello y estimular el crecimiento capilar.",
                 "provider": {
                     "@type": "MedicalBusiness",
                     "name": "Belle Aesthetic Medical Center"

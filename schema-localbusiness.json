@@ -3,7 +3,7 @@
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Belle Aesthetic Medical Center",
-  "description": "Centro de medicina estética en Medellín especializado en rejuvenecimiento facial, tratamientos corporales y turismo médico estético.",
+  "description": "Centro de medicina estética en Medellín especializado en rejuvenecimiento facial, protocolos corporales y turismo médico estético.",
   "image": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
   "logo": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
   "url": "https://belleaesthetic.com",
@@ -60,7 +60,7 @@
     {
       "@type": "MedicalProcedure",
       "name": "Toxina Botulínica (Botox)",
-      "description": "Tratamiento para suavizar arrugas de expresión"
+      "description": "Protocolo para suavizar arrugas de expresión"
     },
     {
       "@type": "MedicalProcedure",
@@ -96,7 +96,7 @@
         "@type": "Rating",
         "ratingValue": "5"
       },
-      "reviewBody": "El tratamiento de bioestimuladores cambió mi piel. Muy profesionales, me gusta que esten bien ubicados en Medellín."
+      "reviewBody": "El protocolo de bioestimuladores cambió mi piel. Muy profesionales, me gusta que esten bien ubicados en Medellín."
     }
   ],
   "mainEntityOfPage": {

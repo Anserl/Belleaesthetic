@@ -21,12 +21,17 @@
     <!-- SEO: Canonical URL -->
     <link rel="canonical" href="https://belleaesthetic.com/nosotros.html">
 
+    <!-- Hreflang para audiencia nacional e internacional -->
+    <link rel="alternate" hreflang="es" href="https://belleaesthetic.com/nosotros.html">
+    <link rel="alternate" hreflang="en" href="https://belleaesthetic.com/nosotros.html">
+    <link rel="alternate" hreflang="x-default" href="https://belleaesthetic.com/nosotros.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://belleaesthetic.com/nosotros.html">
     <meta property="og:title" content="Sobre Belle Aesthetic | Clínica Medicina Estética Medellín">
     <meta property="og:description"
-        content="Conoce Belle Aesthetic: Clínica de medicina estética en El Poblado, Medellín con equipo médico certificado y tecnología de vanguardia.">
+        content="Conoce Belle Aesthetic: Centro médico estético en El Poblado, Medellín con protocolos de vanguardia y resultados naturales.">
     <meta property="og:image" content="https://belleaesthetic.com/img/Logo-letra-transparente.png">
     <meta property="og:locale" content="es_CO">
     <meta property="og:locale:alternate" content="en_US">
@@ -69,6 +74,25 @@
         "foundingDate": "2020",
         "slogan": "Tu destino para la belleza y el bienestar integral"
       }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://belleaesthetic.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Nosotros",
+        "item": "https://belleaesthetic.com/nosotros.html"
+      }]
     }
     </script>
 </head>
@@ -119,7 +143,7 @@
             <div class="about-grid">
                 <div class="about-content">
                     <h2>Nuestra Historia</h2>
-                    <p>Fundada en 2015, Belle Aesthetic nació con la visión de ofrecer tratamientos estéticos de alta
+                    <p>Fundada en 2015, Belle Aesthetic nació con la visión de ofrecer protocolos estéticos de alta
                         calidad en un ambiente relajante y profesional. A lo largo de los años, hemos crecido gracias a
                         la confianza de nuestros clientes y a nuestra constante actualización en las últimas tecnologías
                         del sector.</p>
@@ -146,8 +170,8 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestro Equipo</h2>
-                <p>Profesionales dedicados a tu cuidado</p>
+                <h2>Nuestra Esencia</h2>
+                <p>Pasión por la medicina estética y los protocolos naturales</p>
             </div>
             <div class="team-grid">
                 <div class="team-card">
@@ -173,8 +197,11 @@
                 <p>Para demostrarte que somos de confianza y que cumplimos con las normativas de calidad </p>
 
                 <div class="certificate-container" style="text-align: center; margin-top: 20px;">
-                    <img src="img/certificado_salud.jpg" alt="Certificado de Habilitación Ministerio de Salud" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy">
-                    <p style="margin-top: 15px;"><a href="img/certificado_salud.pdf" target="_blank" class="btn btn-outline" style="font-size: 0.9rem;">Ver PDF Original</a></p>
+                    <img src="img/certificado_salud.jpg" alt="Certificado de Habilitación Ministerio de Salud"
+                        style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                        loading="lazy">
+                    <p style="margin-top: 15px;"><a href="img/certificado_salud.pdf" target="_blank"
+                            class="btn btn-outline" style="font-size: 0.9rem;">Ver PDF Original</a></p>
                 </div>
             </div>
     </section>
@@ -215,6 +242,18 @@
 
                     <div class="info-item">
                         <div class="icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <h3>Dra. Erika Caballero</h3>
+                            <p class="member-role">Médica Estética Especialista</p>
+                            <p class="member-bio">Médica con maestría en medicina estética y amplia experiencia en
+                                armonización facial, bioestimulación de colágeno y protocolos inyectables avanzados.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
@@ -244,8 +283,8 @@
                             inputmode="numeric" title="Solo números (mínimo 7 dígitos)" required>
                         <select name="servicio" title="Selecciona un servicio de interés" required>
                             <option value="">Selecciona un servicio de interés</option>
-                            <option value="facial">Tratamientos Faciales</option>
-                            <option value="corporal">Tratamientos Corporales</option>
+                            <option value="facial">Protocolos Faciales</option>
+                            <option value="corporal">Protocolos Corporales</option>
                             <option value="turismo">Turismo Estético</option>
                             <option value="otro">Otro</option>
                         </select>
