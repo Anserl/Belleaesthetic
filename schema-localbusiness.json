@@ -7,11 +7,11 @@
   "image": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
   "logo": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
   "url": "https://belleaesthetic.com",
-  "telephone": "+57-300-XXX-XXXX",
-  "email": "contacto@belleaesthetic.com",
+  "telephone": "+57-311-618-8733",
+  "email": "recepcion@bellemedicalcenter.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle XX # XX-XX, El Poblado",
+    "streetAddress": "Cl 11A # 42 68, El Poblado",
     "addressLocality": "Medellín",
     "addressRegion": "Antioquia",
     "postalCode": "050021",
@@ -45,16 +45,15 @@
   "priceRange": "$$",
   "paymentAccepted": "Cash, Credit Card, Debit Card",
   "currenciesAccepted": "COP, USD",
-  "hasMap": "https://maps.google.com/?q=Belle+Aesthetic+Medellin",
+  "hasMap": "https://www.google.com/maps/place/Limpieza+Facial+Profunda+%7C+Belle+Aesthetic+Medical+Center/@6.211684,-75.5722352,15z",
   "sameAs": [
-    "https://www.instagram.com/belleaesthetic",
-    "https://www.facebook.com/belleaesthetic",
-    "https://wa.me/573XXXXXXXXX"
+    "https://www.instagram.com/belle.estetica.med",
+    "https://www.facebook.com/belleaestheticmedicalcenter/",
+    "https://wa.me/573116188733"
   ],
   "medicalSpecialty": [
     "Aesthetic Medicine",
-    "Dermatology",
-    "Cosmetic Surgery"
+    "Dermatology"
   ],
   "availableService": [
     {
@@ -102,6 +101,5 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://belleaesthetic.com"
-  },
-  "comment": "AEO: Las reviews anteriores son ejemplos para demostrar estructura. Deben reemplazarse por testimonios reales."
+  }
 }
