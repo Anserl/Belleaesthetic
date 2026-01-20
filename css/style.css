@@ -3296,10 +3296,10 @@ img {
 }
 
 .faq-grid {
-    display: block;
+    display: block !important;
     /* Desactivamos el grid para usar columnas tipo masonry */
-    column-count: 2;
-    column-gap: 30px;
+    column-count: 2 !important;
+    column-gap: 30px !important;
     margin-top: 40px;
 }
 
@@ -3310,9 +3310,9 @@ img {
 }
 
 .faq-item {
-    display: inline-block;
+    display: inline-block !important;
     /* Necesario para que el cuadro no se divida entre columnas */
-    width: 100%;
+    width: 100% !important;
     background: var(--bg-light, #f9f9f9);
     padding: 30px;
     border-radius: 15px;
@@ -3321,7 +3321,7 @@ img {
     cursor: pointer;
     margin-bottom: 30px;
     /* Espacio vertical entre preguntas */
-    break-inside: avoid;
+    break-inside: avoid !important;
     /* Evita que una pregunta se parta a la mitad entre columnas */
 }
 
