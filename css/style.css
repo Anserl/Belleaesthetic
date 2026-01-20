@@ -3296,19 +3296,33 @@ img {
 }
 
 .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: block;
+    /* Desactivamos el grid para usar columnas tipo masonry */
+    column-count: 2;
+    column-gap: 30px;
     margin-top: 40px;
 }
 
+@media (max-width: 900px) {
+    .faq-grid {
+        column-count: 1;
+    }
+}
+
 .faq-item {
+    display: inline-block;
+    /* Necesario para que el cuadro no se divida entre columnas */
+    width: 100%;
     background: var(--bg-light, #f9f9f9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     cursor: pointer;
+    margin-bottom: 30px;
+    /* Espacio vertical entre preguntas */
+    break-inside: avoid;
+    /* Evita que una pregunta se parta a la mitad entre columnas */
 }
 
 .faq-item:hover {
