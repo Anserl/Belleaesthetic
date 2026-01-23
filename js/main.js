@@ -1,5 +1,5 @@
 /**
- * ARCHIVO JAVASCRIPT PRINCIPAL - BELLE STETIC
+ * ARCHIVO JAVASCRIPT PRINCIPAL - BELLE AESTHETIC
  * -------------------------------------------
  * Este archivo controla la interactividad del sitio web, incluyendo:
  * 1. Menú móvil (hamburguesa)
