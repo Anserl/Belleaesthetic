@@ -26,7 +26,7 @@ Antes de subir los archivos a Hostinger, es una buena práctica comprimirlos en 
 
 ## Paso 3: Verificar el sitio web
 
-1.  Abre tu navegador y escribe tu nombre de dominio (por ejemplo, `www.belleaesthetic.com`).
+1.  Abre tu navegador y escribe tu nombre de dominio (por ejemplo, `www.bellemedicalcenter.com`).
 2.  Tu sitio web debería cargarse correctamente.
 3.  Navega por las diferentes páginas (`index.html`, `nosotros.html`, `turismo-estetico.html`) para asegurarte de que todos los enlaces funcionan.
 4.  Prueba el formulario de contacto en la página "Nosotros" para confirmar que redirige a WhatsApp correctamente.
@@ -37,7 +37,7 @@ Tu sitio web es estático (HTML, CSS, JS), lo que lo hace muy seguro por natural
 
 1.  **Usa HTTPS (SSL):** Hostinger generalmente ofrece un certificado SSL gratuito. Asegúrate de que esté activado para tu dominio. Esto encripta la conexión entre el usuario y tu sitio, y muestra un candado en la barra de direcciones del navegador, lo que genera confianza.
 2.  **Verifica los enlaces salientes:** Asegúrate de que todos los enlaces a redes sociales y Google Maps sean los correctos (`https://instagram.com/belleaesthetic`, etc.). Un atacante podría intentar engañarte para que enlaces a sitios falsos. Los que tienes actualmente son correctos.
-3.  **Correo electrónico profesional:** Utiliza un correo electrónico con tu propio dominio (ej. `info@belleaesthetic.com`) en lugar de un correo público como Gmail. Hostinger te permite crear cuentas de correo electrónico. Esto da una imagen más profesional y es más difícil de suplantar.
+3.  **Correo electrónico profesional:** Utiliza un correo electrónico con tu propio dominio (ej. `info@bellemedicalcenter.com`) en lugar de un correo público como Gmail. Hostinger te permite crear cuentas de correo electrónico. Esto da una imagen más profesional y es más difícil de suplantar.
 4.  **Monitoreo de la reputación del dominio:** Utiliza herramientas como Google Safe Browsing para verificar que tu sitio no ha sido marcado como malicioso.
 
 Tu código actual no presenta vulnerabilidades de phishing porque no procesa datos sensibles en el servidor ni tiene una base de datos. La redirección a WhatsApp es segura.

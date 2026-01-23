@@ -10,4 +10,4 @@ Disallow: /backup/
 # Opcional: Evitar indexación de archivos de respaldo específicos
 Disallow: *_backup.html
 
-Sitemap: https://belleaesthetic.com/sitemap.xml
+Sitemap: https://bellemedicalcenter.com/sitemap.xml

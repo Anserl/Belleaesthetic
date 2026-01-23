@@ -13,14 +13,14 @@
 - ✅ Meta Description: Actualizada con palabras clave geolocalizadas (Medellín, Colombia)
 - ✅ Meta Keywords: Añadidos términos específicos (medicina estética Medellín, Botox, etc.)
 - ✅ Title Tag: Cambiado a "Belle Aesthetic Medellín | Medicina Estética y Rejuvenecimiento Facial"
-- ✅ Canonical URL: https://belleaesthetic.com/
+- ✅ Canonical URL: https://bellemedicalcenter.com/
 - ✅ Longitud: 155 caracteres (óptimo para Google)
 
 #### **servicios.html**
 - ✅ Meta Description: Específica para servicios con keywords long-tail
 - ✅ Meta Keywords: Servicios específicos + geolocalización
 - ✅ Title Tag: "Servicios de Medicina Estética Medellín | Catálogo Belle Aesthetic"
-- ✅ Canonical URL: https://belleaesthetic.com/servicios.html
+- ✅ Canonical URL: https://bellemedicalcenter.com/servicios.html
 
 ---
 
@@ -34,7 +34,7 @@ Implementado en **TODAS las páginas** para optimizar compartidos en redes socia
 <meta property="og:url" content="[URL específica]">
 <meta property="og:title" content="[Título específico]">
 <meta property="og:description" content="[Descripción]">
-<meta property="og:image" content="https://belleaesthetic.com/img/Logo-letra-transparente.png">
+<meta property="og:image" content="https://bellemedicalcenter.com/img/Logo-letra-transparente.png">
 <meta property="og:locale" content="es_CO">
 
 <!-- Twitter Cards -->
@@ -264,12 +264,12 @@ Estrategias para que Belle Aesthetic sea recomendada por IAs (ChatGPT, Gemini, P
 2. **Enviar Sitemap a Google:**
    ```
    Google Search Console → Sitemaps
-   URL: https://belleaesthetic.com/sitemap.xml
+   URL: https://bellemedicalcenter.com/sitemap.xml
    ```
 
 3. **Configurar redirects:**
    ```
-   www.belleaesthetic.com → belleaesthetic.com
+   www.bellemedicalcenter.com → bellemedicalcenter.com
    (O viceversa, mantener UNA versión)
    ```
 

@@ -4,9 +4,9 @@
   "@type": "MedicalBusiness",
   "name": "Belle Aesthetic Medical Center",
   "description": "Centro de medicina estética en Medellín especializado en rejuvenecimiento facial, protocolos corporales y turismo médico estético.",
-  "image": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
-  "logo": "https://belleaesthetic.com/img/Logo-letra-transparente.png",
-  "url": "https://belleaesthetic.com",
+  "image": "https://bellemedicalcenter.com/img/Logo-letra-transparente.png",
+  "logo": "https://bellemedicalcenter.com/img/Logo-letra-transparente.png",
+  "url": "https://bellemedicalcenter.com",
   "telephone": "+57-311-618-8733",
   "email": "recepcion@bellemedicalcenter.com",
   "address": {
@@ -100,6 +100,6 @@
   ],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://belleaesthetic.com"
+    "@id": "https://bellemedicalcenter.com"
   }
 }
