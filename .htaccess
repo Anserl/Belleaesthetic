@@ -1,25 +1,78 @@
-# Activar RewriteEngine
+# Configuración Avanzada para Belle Aesthetic (Hostinger/Apache)
+# Combina seguridad, velocidad y URLs amigables.
+
+# 1. Activar Motor de Reescritura
 RewriteEngine On
 
-# 1. Forzar HTTPS
+# 2. Forzar conexión segura (HTTPS)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Forzar non-www (eliminar www)
-# Si tu dominio preferido es sin www (como indican tus canonicals)
+# 3. Estandarizar dominio: Eliminar "www"
+# Redirige www.bellemedicalcenter.com a bellemedicalcenter.com
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# Expiración de caché para mejorar rendimiento (Browser Caching)
+# 4. URLs Amigables (Eliminar extensión .html)
+# Permite acceder a /servicios en lugar de /servicios.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 5. Página de Error 404 Personalizada
+# Si no encuentra la página, redirige al inicio (o crea una 404.html si prefieres)
+ErrorDocument 404 /index.html
+
+# 6. Compresión GZIP / Deflate (Mejora drástica de velocidad)
+# Comprime el código antes de enviarlo al navegador
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# 7. Seguridad: Proteger archivos sensibles
+# Evita que se descarguen copias de seguridad, logs o configuraciones
+<FilesMatch "\.(bak|backup|sql|ini|log|sh|inc|swp|dist)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Bloquear acceso al propio archivo .htaccess
+<Files .htaccess>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# 8. Caché de Navegador (Browser Caching)
+# Guarda recursos estáticos en el dispositivo del usuario para visitas futuras
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/pdf "access plus 1 month"
   ExpiresByType text/x-javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType application/x-shockwave-flash "access plus 1 month"
   ExpiresByType image/x-icon "access plus 1 year"
   ExpiresDefault "access plus 2 days"
