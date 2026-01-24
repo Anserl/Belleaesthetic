@@ -77,3 +77,9 @@ ErrorDocument 404 /index.html
   ExpiresByType image/x-icon "access plus 1 year"
   ExpiresDefault "access plus 2 days"
 </IfModule>
+
+# 9. Seguridad: HSTS (Strict-Transport-Security)
+# Indica a los navegadores que siempre deben conectarse por HTTPS
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
