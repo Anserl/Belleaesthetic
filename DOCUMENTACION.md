@@ -404,3 +404,30 @@ Si agregas una nueva sección, asegúrate de ponerle un comentario para saber qu
 **Última actualización**: 19 de Diciembre, 2025
 **Estado del Código**: Optimizado para SEO - Comentado - 100% Funcional
 
+---
+
+## 📝 REGISTRO DE CAMBIOS RECIENTES (Enero 2026)
+
+A continuación se detallan las actualizaciones críticas realizadas para preparar el sitio para su lanzamiento y asegurar su rendimiento.
+
+### 1. Migración de Dominio Completa
+*   **Cambio**: Se reemplazó todo rastro de `belleaesthetic.com` por `bellemedicalcenter.com` en HTML, sitemaps, robots.txt y metadatos.
+*   **¿Por qué?**: Para asegurar que Google indexe el sitio bajo el dominio oficial, evitar errores de "contenido duplicado" y garantizar que todos los enlaces compartidos en redes sociales funcionen correctamente.
+
+### 2. Actualización de Horarios de Atención
+*   **Cambio**: Se ajustaron los horarios a **Lunes-Sábado 10:00 AM - 5:30 PM (Domingos cerrado)** en todas las páginas y esquemas de datos estructurados.
+*   **¿Por qué?**: La consistencia (NAP Consistency) es clave para el SEO Local. Si Google, Facebook y tu web muestran horarios diferentes, afecta negativamente tu ranking en Google Maps.
+
+### 3. Creación de `llms.txt` para Inteligencia Artificial (AEO)
+*   **Cambio**: Se añadió un archivo `llms.txt` en la raíz del sitio con información resumida de la clínica.
+*   **¿Por qué?**: Esto es parte de la **Optimización para Motores de IA (AEO)**. Este archivo "educa" a IAs como ChatGPT, Perplexity y Claude sobre quién es Belle Aesthetic, ayudando a que te recomienden con datos precisos cuando los usuarios pregunten.
+
+### 4. Auditoría y Corrección Técnica SEO
+*   **Cambio**: Revisión exhaustiva de etiquetas `alt` en imágenes y eliminación de enlaces de prueba.
+*   **¿Por qué?**: Las imágenes sin texto alternativo son invisibles para Google. Ahora, tus imágenes ayudan al posicionamiento. Además, eliminar enlaces rotos mejora la experiencia del usuario y la "salud" del sitio ante Google.
+
+### 5. Consistencia de Marca y Datos
+*   **Cambio**: Unificación de nombres ("BELLE AESTHETIC") y normalización de direcciones y teléfonos en el código fuente.
+*   **¿Por qué?**: Pequeñas discrepancias (como un espacio extra en la dirección) pueden hacer que Google dude de la veracidad del negocio. La uniformidad total maximiza la confianza del algoritmo.
+
+
