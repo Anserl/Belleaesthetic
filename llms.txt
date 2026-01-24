@@ -1,0 +1,21 @@
+# Belle Aesthetic Medical Center
+
+Belle Aesthetic Medical Center es una clínica de medicina estética ubicada en El Poblado, Medellín, Colombia. Nos especializamos en tratamientos de rejuvenecimiento facial, moldeamiento corporal y turismo médico estético, ofreciendo resultados naturales y seguros.
+
+## Información Clave
+- **Directora Médica**: Dra. Erika Caballero
+- **Ubicación**: Cl 11A #42 68, El Poblado, Medellín, Antioquia, Colombia
+- **Teléfono/WhatsApp**: +57 311 618 8733
+- **Email**: recepcion@bellemedicalcenter.com
+- **Horario**: Lunes a Sábado, 10:00 AM - 5:30 PM
+
+## Servicios Principales
+- **Faciales**: Toxina Botulínica (Botox), Ácido Hialurónico, Bioestimuladores (Sculptra/Radiesse), Hilos Tensores, Limpieza Facial Premium, Dermapen.
+- **Corporales**: Tensamax, Emsculpt, Hidrolipoclasia, Masajes Terapéuticos, Paquetes Reductores.
+- **Turismo Estético**: Paquetes todo incluido (tratamiento + hospedaje + transporte) para pacientes internacionales.
+
+## Enlaces del Sitio
+- [Inicio](https://bellemedicalcenter.com/)
+- [Catálogo de Servicios](https://bellemedicalcenter.com/servicios.html)
+- [Turismo Estético](https://bellemedicalcenter.com/turismo-estetico.html)
+- [Sobre Nosotros](https://bellemedicalcenter.com/nosotros.html)
