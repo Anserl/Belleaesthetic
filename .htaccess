@@ -82,4 +82,7 @@ ErrorDocument 404 /index.html
 # Indica a los navegadores que siempre deben conectarse por HTTPS
 <IfModule mod_headers.c>
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
