@@ -79,12 +79,30 @@
             "itemOffered": {
               "@type": "Product",
               "name": "Paquete Turismo Estético Completo",
-              "description": "Incluye protocolos estéticos, hospedaje, transporte y tours por Medellín"
+              "description": "Incluye protocolos estéticos, hospedaje, transporte y tours por Medellín",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "COP",
+                "price": "Consultar",
+                "availability": "https://schema.org/InStock",
+                "alternateOffer": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "Consultar",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
             },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "priceCurrency": "USD"
-            }
+            "priceSpecification": [
+              {
+                "@type": "PriceSpecification",
+                "priceCurrency": "COP"
+              },
+              {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD"
+              }
+            ]
           }
         ]
       }
