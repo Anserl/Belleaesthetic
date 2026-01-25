@@ -9,7 +9,7 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # 3. Estandarizar dominio: Eliminar "www"
-# Redirige www.bellemedicalcenter.com a bellemedicalcenter.com
+# Redirige www.belleaesthetic.com a belleaesthetic.com
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
@@ -20,8 +20,8 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 # 5. Página de Error 404 Personalizada
-# Si no encuentra la página, redirige al inicio (o crea una 404.html si prefieres)
-ErrorDocument 404 /index.html
+# Si no encuentra la página, muestra una página 404 amigable
+ErrorDocument 404 /404.html
 
 # 6. Compresión GZIP / Deflate (Mejora drástica de velocidad)
 # Comprime el código antes de enviarlo al navegador
