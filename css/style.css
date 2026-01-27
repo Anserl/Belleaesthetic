@@ -3394,3 +3394,147 @@ img {
         transform: translateY(0);
     }
 }
+
+/* Testimonios Carrusel Estilo Google */
+.testimonials-native {
+    background-color: var(--bg-light);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.testimonials-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px 0;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 30px;
+    width: max-content;
+    padding: 10px 0;
+}
+
+.testimonial-card.google-review {
+    flex: 0 0 calc(33.333% - 20px);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    min-height: 250px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.google-logo {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-meta-google {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #202124;
+    /* Color Google */
+    font-size: 0.95rem;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #70757a;
+}
+
+.google-stars {
+    color: #fabb05;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 2px;
+}
+
+.testimonial-text {
+    font-size: 0.875rem;
+    /* Más parecido a Google Maps */
+    line-height: 1.5;
+    color: #3c4043;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.review-footer {
+    border-top: 1px solid #f1f3f4;
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.verified-review {
+    font-size: 0.8rem;
+    color: #70757a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.verified-review i {
+    color: #34A853;
+}
+
+/* Puntos de navegación */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dadce0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    width: 25px;
+    border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+    .testimonial-card.google-review {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-card.google-review {
+        flex: 0 0 100%;
+    }
+}

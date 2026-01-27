@@ -494,4 +494,108 @@ ${mensaje}`;
         });
     }
 
+    // --- 11. CARRUSEL DE TESTIMONIOS (GOOGLE REVIEWS) ---
+    const track = document.getElementById('testimonials-track');
+    const dotsContainer = document.getElementById('carousel-dots');
+    const cards = document.querySelectorAll('.testimonial-card.google-review');
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    if (track && cards.length > 0) {
+        // Crear puntos de navegación
+        const cardWidth = 100 / calculateVisibleCards();
+        const totalDots = Math.ceil(cards.length - calculateVisibleCards() + 1);
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const numDots = Math.ceil(cards.length - calculateVisibleCards() + 1);
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function calculateVisibleCards() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function updateCarousel() {
+            const visibleCards = calculateVisibleCards();
+            const gap = 30; // Gap en px
+            const containerWidth = track.parentElement.offsetWidth;
+
+            if (containerWidth === 0) {
+                // Si el contenedor no tiene ancho aún, reintentar en 100ms
+                setTimeout(updateCarousel, 100);
+                return;
+            }
+
+            const cardSize = (containerWidth - (visibleCards - 1) * gap) / visibleCards;
+
+            // Forzar el ancho de cada tarjeta para evitar colapsos
+            cards.forEach(card => {
+                card.style.flex = `0 0 ${cardSize}px`;
+                card.style.width = `${cardSize}px`;
+            });
+
+            const offset = currentIndex * (cardSize + gap);
+            track.style.transform = `translateX(-${offset}px)`;
+
+            // Actualizar dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            const maxIndex = cards.length - calculateVisibleCards();
+            currentIndex = Math.min(Math.max(index, 0), maxIndex);
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function nextSlide() {
+            const maxIndex = cards.length - calculateVisibleCards();
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateCarousel();
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Inicialización
+        createDots();
+        updateCarousel(); // <-- Forzar el primer renderizado
+        resetAutoPlay();
+
+        // Pausar en hover (ahora con el selector correcto del contenedor)
+        const container = track.parentElement;
+        container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        container.addEventListener('mouseleave', resetAutoPlay);
+
+        // Ajustar en resize con debounce simple
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                createDots();
+                const maxIndex = cards.length - calculateVisibleCards();
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                updateCarousel();
+            }, 100);
+        });
+    }
+
 });
