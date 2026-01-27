@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #D4A5A5;
+    --primary-dark: #B88B8B;
+    --secondary-color: #F8F2E8;
+    --secondary-dark: #E8D5C4;
+    --accent-color: #A8B5A0;
+    --text-color: #4A3428;
+    --light-text: #8B7355;
+    --bg-light: #FFF9F0;
+    --white: #FFFFFF;
+    --black: #2D1F1A;
+    --transition: all 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 242, 232, 0.95));
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.4s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-list a {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.hero {
+    padding: 100px 20px 60px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fffcf9, #f5efe6);
+}
+
+.hero-image-container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.hero-text-content h1 {
+    font-size: 4.8rem;
+    line-height: 1.05;
+    background: linear-gradient(135deg, var(--primary-color), #8B5E5E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

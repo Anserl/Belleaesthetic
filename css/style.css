@@ -529,7 +529,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../img/Medellin Hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../img/Medellin Hero.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -864,7 +864,7 @@ img {
 }
 
 .page-header-nosotros {
-    background-image: url("../img/clinic_reception2.jpg");
+    background-image: url("../img/clinic_reception2.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -873,7 +873,7 @@ img {
 }
 
 .page-header-servicios {
-    background-image: url("../img/salon_tratamiento.jpg");
+    background-image: url("../img/salon_tratamiento.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

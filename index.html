@@ -9,7 +9,7 @@
 
     <!-- SEO: Meta Description optimizada con palabras clave geolocalizadas -->
     <meta name="description"
-        content="Medicina estética en Medellín: Rejuvenecimiento facial, Botox y resultados naturales con la Dra. Erika Caballero en El Poblado.">
+        content="Descubre el máximo bienestar en Belle Aesthetic, El Poblado. Combinamos tecnología de punta con la experiencia de la Dra. Erika Caballero para ofrecerte resultados naturales y duraderos en medicina estética avanzada.">
 
     <!-- SEO: Keywords relevantes para posicionamiento local e internacional -->
     <meta name="keywords"
@@ -60,6 +60,95 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 
+    <style>
+        :root {
+            --primary-color: #D4A5A5;
+            --primary-dark: #B88B8B;
+            --secondary-color: #F8F2E8;
+            --secondary-dark: #E8D5C4;
+            --accent-color: #A8B5A0;
+            --text-color: #4A3428;
+            --light-text: #8B7355;
+            --bg-light: #FFF9F0;
+            --white: #FFFFFF;
+            --black: #2D1F1A;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 242, 232, 0.95));
+            backdrop-filter: blur(20px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-list a {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .hero {
+            padding: 100px 20px 60px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fffcf9, #f5efe6);
+        }
+
+        .hero-image-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-text-content h1 {
+            font-size: 4.8rem;
+            line-height: 1.05;
+            background: linear-gradient(135deg, var(--primary-color), #8B5E5E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
     <link rel="stylesheet" href="css/style.css?v=1.1">
 
     <!-- Schema.org JSON-LD para LocalBusiness/MedicalBusiness -->
@@ -152,9 +241,12 @@
     <section class="hero">
         <div class="hero-image-container">
             <div class="hero-image-overlay"></div>
-            <img src="img/hero_logo_image.png"
-                alt="Belle Aesthetic Medical Center Medellín - Especialistas en Medicina Estética y Rejuvenecimiento Facial"
-                width="600" height="600" fetchpriority="high">
+            <picture>
+                <source srcset="img/hero_logo_image.webp" type="image/webp">
+                <img src="img/hero_logo_image.png"
+                    alt="Belle Aesthetic Medical Center Medellín - Especialistas en Medicina Estética y Rejuvenecimiento Facial"
+                    width="600" height="600" fetchpriority="high" loading="eager">
+            </picture>
         </div>
     </section>
 
@@ -225,7 +317,7 @@
         <div class="container">
             <div class="section-header">
                 <br>
-                <h2>Nuestras Instalaciones</h2>
+                <h2>Tecnología y Bienestar: Nuestras Instalaciones en El Poblado</h2>
                 <p>Espacios diseñados para tu comodidad y bienestar</p>
                 <br>
             </div>
@@ -233,18 +325,24 @@
             <div class="clinic-carousel-container">
                 <div class="clinic-carousel-track">
                     <div class="clinic-slide active">
-                        <img src="img/clinic_reception2.jpg"
-                            alt="Recepción elegante de Belle Aesthetic Medical Center en El Poblado, Medellín"
-                            loading="lazy" width="800" height="533">
+                        <picture>
+                            <source srcset="img/clinic_reception2.webp" type="image/webp">
+                            <img src="img/clinic_reception2.jpg"
+                                alt="Recepción elegante de Belle Aesthetic Medical Center en El Poblado, Medellín"
+                                loading="lazy" width="800" height="533">
+                        </picture>
                         <div class="slide-caption">
                             <h3>Recepción</h3>
                             <p>Ambiente acogedor desde tu llegada</p>
                         </div>
                     </div>
                     <div class="clinic-slide">
-                        <img src="img/clinic_treatment.jpg"
-                            alt="Sala de procedimientos médicos estéticos en Belle Aesthetic Medellín" loading="lazy"
-                            width="800" height="533">
+                        <picture>
+                            <source srcset="img/clinic_treatment.webp" type="image/webp">
+                            <img src="img/clinic_treatment.jpg"
+                                alt="Sala de procedimientos médicos estéticos en Belle Aesthetic Medellín"
+                                loading="lazy" width="800" height="533">
+                        </picture>
                         <div class="slide-caption">
                             <h3>Sala de Tratamiento</h3>
                             <p>Equipamiento de última generación</p>
@@ -252,8 +350,11 @@
                     </div>
 
                     <div class="clinic-slide">
-                        <img src="img/clinic_equipment.jpg"
-                            alt="Tecnología de medicina estética de vanguardia en Medellín" loading="lazy">
+                        <picture>
+                            <source srcset="img/clinic_equipment.webp" type="image/webp">
+                            <img src="img/clinic_equipment.jpg"
+                                alt="Tecnología de medicina estética de vanguardia en Medellín" loading="lazy">
+                        </picture>
                         <div class="slide-caption">
                             <h3>Tecnología Avanzada</h3>
                             <p>Equipos de vanguardia</p>
@@ -277,7 +378,7 @@
     <section class="section before-after-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Resultados Reales</h2>
+                <h2>Resultados Reales con Tecnología Médica</h2>
                 <p>Desliza para ver la transformación</p>
             </div>
 
@@ -289,14 +390,22 @@
                     <div class="before-after-container">
                         <!-- Imagen de fondo (DESPUÉS) -->
                         <div class="img-background">
-                            <img src="img/antes-despues/despues-tratamiento-facial-manchas-mujer.jpg"
-                                alt="Resultado después del tratamiento facial para manchas en Belle Aesthetic Medellín"
-                                loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/despues-tratamiento-facial-manchas-mujer.webp"
+                                    type="image/webp">
+                                <img src="img/antes-despues/despues-tratamiento-facial-manchas-mujer.jpg"
+                                    alt="Resultado después del tratamiento facial para manchas en Belle Aesthetic Medellín"
+                                    loading="lazy">
+                            </picture>
                         </div>
                         <!-- Imagen superpuesta (ANTES) -->
                         <div class="img-foreground">
-                            <img src="img/antes-despues/antes-tratamiento-facial-manchas-mujer.jpg"
-                                alt="Estado antes del tratamiento facial para manchas" loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/antes-tratamiento-facial-manchas-mujer.webp"
+                                    type="image/webp">
+                                <img src="img/antes-despues/antes-tratamiento-facial-manchas-mujer.jpg"
+                                    alt="Estado antes del tratamiento facial para manchas" loading="lazy">
+                            </picture>
                         </div>
                         <!-- Etiquetas posicionadas independientemente -->
                         <span class="label label-before">Antes</span>
@@ -320,14 +429,20 @@
                     <div class="before-after-container">
                         <!-- Imagen de fondo (DESPUÉS) -->
                         <div class="img-background">
-                            <img src="img/antes-despues/despues-corporal-mujer.jpg"
-                                alt="Resultado después del tratamiento corporal reductivo y reafirmante en Medellín"
-                                loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/despues-corporal-mujer.webp" type="image/webp">
+                                <img src="img/antes-despues/despues-corporal-mujer.jpg"
+                                    alt="Resultado después del tratamiento corporal reductivo y reafirmante en Medellín"
+                                    loading="lazy">
+                            </picture>
                         </div>
                         <!-- Imagen superpuesta (ANTES) -->
                         <div class="img-foreground">
-                            <img src="img/antes-despues/antes-corporal-mujer.jpg"
-                                alt="Estado antes del tratamiento corporal en Belle Aesthetic" loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/antes-corporal-mujer.webp" type="image/webp">
+                                <img src="img/antes-despues/antes-corporal-mujer.jpg"
+                                    alt="Estado antes del tratamiento corporal en Belle Aesthetic" loading="lazy">
+                            </picture>
                         </div>
 
                         <span class="label label-before">Antes</span>
@@ -351,14 +466,20 @@
                     <div class="before-after-container">
                         <!-- Imagen de fondo (DESPUÉS) -->
                         <div class="img-background">
-                            <img src="img/antes-despues/despues-botox-mujer.jpg"
-                                alt="Resultado después de la aplicación de Botox (Toxina Botulínica) en Medellín"
-                                loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/despues-botox-mujer.webp" type="image/webp">
+                                <img src="img/antes-despues/despues-botox-mujer.jpg"
+                                    alt="Resultado después de la aplicación de Botox (Toxina Botulínica) en Medellín"
+                                    loading="lazy">
+                            </picture>
                         </div>
                         <!-- Imagen superpuesta (ANTES) -->
                         <div class="img-foreground">
-                            <img src="img/antes-despues/antes-botox-mujer.jpg"
-                                alt="Arrugas de expresión antes del Botox en Belle Aesthetic" loading="lazy">
+                            <picture>
+                                <source srcset="img/antes-despues/antes-botox-mujer.webp" type="image/webp">
+                                <img src="img/antes-despues/antes-botox-mujer.jpg"
+                                    alt="Arrugas de expresión antes del Botox en Belle Aesthetic" loading="lazy">
+                            </picture>
                         </div>
 
                         <span class="label label-before">Antes</span>
@@ -408,7 +529,7 @@
         <div class="container">
             <div class="section-header">
                 <br>
-                <h2>Experiencia Premium</h2>
+                <h2>Experiencia Premium y Bienestar Integral</h2>
                 <p>Tecnología, confort y exclusividad en un solo lugar</p>
                 <br>
             </div>
@@ -450,7 +571,7 @@
 
     <section class="cta">
         <div class="container">
-            <h2>¿Lista para el cambio?</h2>
+            <h2>¿Lista para ver tus propios resultados?</h2>
             <p>Contáctanos hoy y recibe una valoración, cambia tu vida y siente la diferencia.</p>
             <a href="https://wa.me/+573116188733" class="btn btn-white"><i class="fab fa-whatsapp"></i> Escríbenos
                 al
