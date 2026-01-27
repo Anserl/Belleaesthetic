@@ -1560,26 +1560,8 @@ img {
     transition: transform 0.5s ease-in-out;
 }
 
-.testimonial-card {
-    min-width: 100%;
-    background: var(--white);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    position: relative;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.5s ease;
-    display: none;
-}
+/* Estilos de testimonios antiguos eliminados para evitar conflictos con el nuevo carrusel premium */
 
-.testimonial-card.active {
-    opacity: 1;
-    transform: scale(1);
-    display: block;
-    animation: fadeInScale 0.5s ease forwards;
-}
 
 @keyframes fadeInScale {
     from {
@@ -3397,99 +3379,150 @@ img {
 
 /* Testimonios Carrusel Estilo Google */
 .testimonials-native {
-    background-color: var(--bg-light);
+    background: radial-gradient(circle at top, #ffffff 0%, var(--bg-light) 100%);
     padding: 100px 0;
     overflow: hidden;
+    position: relative;
 }
 
 .testimonials-carousel-container {
     position: relative;
     max-width: 1200px;
     margin: 40px auto 0;
-    padding: 20px 0;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .testimonials-carousel-container {
+        padding: 40px 20px;
+        margin: 20px 15px 0;
+        border-radius: 30px;
+    }
 }
 
 .testimonials-track {
     display: flex;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    gap: 30px;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    gap: 35px;
     width: max-content;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .testimonial-card.google-review {
-    flex: 0 0 calc(33.333% - 20px);
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
+    flex: 0 0 calc(33.333% - 24px);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(212, 165, 165, 0.1);
     display: flex;
     flex-direction: column;
-    min-width: 300px;
-    min-height: 250px;
-    opacity: 1 !important;
-    visibility: visible !important;
+    min-width: 320px;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 1;
+}
+
+.testimonial-card.google-review:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(212, 165, 165, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Icono de comilla gigante decorativo */
+.testimonial-card.google-review::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 15rem;
+    font-family: 'Outfit', serif;
+    color: var(--primary-color);
+    opacity: 0.05;
+    pointer-events: none;
+    line-height: 1;
+    z-index: -1;
 }
 
 .card-header {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.google-logo {
-    width: 24px;
-    height: 24px;
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.2);
+    text-transform: uppercase;
 }
 
-.author-meta-google {
-    display: flex;
-    flex-direction: column;
+.google-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
 }
 
 .author-name {
-    font-weight: 600;
-    color: #202124;
-    /* Color Google */
-    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
 }
 
 .review-date {
-    font-size: 0.8rem;
-    color: #70757a;
+    font-size: 0.85rem;
+    color: #9aa0a6;
 }
 
 .google-stars {
     color: #fabb05;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
     display: flex;
-    gap: 2px;
+    gap: 4px;
+}
+
+.google-stars i {
+    filter: drop-shadow(0 0 3px rgba(250, 187, 5, 0.3));
 }
 
 .testimonial-text {
-    font-size: 0.875rem;
-    /* Más parecido a Google Maps */
-    line-height: 1.5;
-    color: #3c4043;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 25px;
     flex-grow: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .review-footer {
-    border-top: 1px solid #f1f3f4;
-    padding-top: 12px;
-    display: flex;
-    align-items: center;
+    border-top: 1px solid #f8f9fa;
+    padding-top: 20px;
+    margin-top: auto;
 }
 
 .verified-review {
@@ -3508,33 +3541,101 @@ img {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-top: 40px;
 }
 
 .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: #dadce0;
+    background: #e8eaed;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .carousel-dot.active {
     background: var(--primary-color);
-    width: 25px;
-    border-radius: 5px;
+    width: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.3);
+}
+
+/* Botones de Navegación laterales */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 15px 35px rgba(212, 165, 165, 0.4);
+}
+
+.carousel-nav-btn.prev {
+    left: 10px;
+}
+
+.carousel-nav-btn.next {
+    right: 10px;
+}
+
+/* Botón Google Maps */
+.btn-outline-google {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px;
+    background-color: #ffffff;
+    border: 1px solid rgba(218, 220, 224, 0.8);
+    color: #3c4043;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.btn-outline-google:hover {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(212, 165, 165, 0.2);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {
     .testimonial-card.google-review {
-        flex: 0 0 calc(50% - 15px);
+        flex: 0 0 calc(50% - 17.5px);
     }
 }
 
 @media (max-width: 768px) {
     .testimonial-card.google-review {
         flex: 0 0 100%;
+        min-width: 280px;
+    }
+
+    .carousel-nav-btn {
+        width: 44px;
+        height: 44px;
     }
 }

@@ -526,7 +526,7 @@ ${mensaje}`;
 
         function updateCarousel() {
             const visibleCards = calculateVisibleCards();
-            const gap = 30; // Gap en px
+            const gap = 35; // Gap en px, debe coincidir con el CSS
             const containerWidth = track.parentElement.offsetWidth;
 
             if (containerWidth === 0) {
@@ -572,7 +572,7 @@ ${mensaje}`;
 
         function resetAutoPlay() {
             clearInterval(autoPlayInterval);
-            autoPlayInterval = setInterval(nextSlide, 5000);
+            autoPlayInterval = setInterval(nextSlide, 4000);
         }
 
         // Inicialización
@@ -584,6 +584,26 @@ ${mensaje}`;
         const container = track.parentElement;
         container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
         container.addEventListener('mouseleave', resetAutoPlay);
+
+        // Navegación manual con botones
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const maxIndex = cards.length - calculateVisibleCards();
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = maxIndex;
+                goToSlide(newIndex);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+        }
 
         // Ajustar en resize con debounce simple
         let resizeTimer;
