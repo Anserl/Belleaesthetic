@@ -66,6 +66,7 @@
         "name": "Belle Aesthetic Medical Center",
         "url": "https://bellemedicalcenter.com",
         "logo": "https://bellemedicalcenter.com/img/Logo-letra-transparente.png",
+        "foundingDate": "2015",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Cl 11A #42 68, El Poblado",
@@ -73,29 +74,53 @@
           "addressRegion": "Antioquia",
           "addressCountry": "CO"
         },
-        "telephone": "+573116188733", 
-        "foundingDate": "2020",
-        "employee": {
-          "@type": "Physician",
-          "name": "Dra. Erika Caballero",
-          "jobTitle": "Médica Estética",
-          "medicalSpecialty": "CosmeticAppearance",
-          "description": "Médica con maestría en medicina estética, especialista en armonización facial e inyectables avanzados.",
-          "knowsLanguage": ["es", "en"],
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "Secretaría de Salud de Medellín"
-          }
-        },
+        "telephone": "+573116188733",
+        "slogan": "Tu destino para la belleza y el bienestar integral",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "10:00",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "09:00",
             "closes": "17:30"
           }
         ],
-        "slogan": "Tu destino para la belleza y el bienestar integral"
+        "employee": [
+          {
+            "@type": "Physician",
+            "name": "Erika Caballero",
+            "jobTitle": "Directora Médica — Especialista en Medicina Estética",
+            "medicalSpecialty": "CosmeticAppearance",
+            "description": "Médica General egresada de la Corporación Universitaria Remington (2016). Maestría Internacional en Medicina Estética, Educa Business School (2022). Miembro de la SIRF desde 2023. Especialista en armonización facial, bioestimulación de colágeno y protocolos inyectables avanzados.",
+            "knowsLanguage": ["es", "en"],
+            "alumniOf": [
+              {
+                "@type": "EducationalOrganization",
+                "name": "Corporación Universitaria Remington"
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "Educa Business School"
+              }
+            ],
+            "memberOf": {
+              "@type": "Organization",
+              "name": "SIRF — Sociedad Internacional de Rejuvenecimiento Facial"
+            },
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Secretaría de Salud de Antioquia"
+            },
+            "image": "https://bellemedicalcenter.com/img/erika_profesional-2prueba.jpg"
+          },
+          {
+            "@type": "Physician",
+            "name": "Catalina Londoño",
+            "jobTitle": "Especialista en Cuidado de la Piel Facial y Corporal",
+            "medicalSpecialty": "CosmeticAppearance",
+            "description": "Especialista en tratamientos faciales y corporales avanzados en Belle Aesthetic Medical Center, El Poblado, Medellín.",
+            "image": "https://bellemedicalcenter.com/img/cata_doctora3.jpeg"
+          }
+        ]
       }
     }
     </script>
@@ -105,17 +130,20 @@
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Inicio",
-        "item": "https://bellemedicalcenter.com/index.html"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Nosotros",
-        "item": "https://bellemedicalcenter.com/nosotros"
-      }]
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://bellemedicalcenter.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nosotros",
+          "item": "https://bellemedicalcenter.com/nosotros"
+        }
+      ]
     }
     </script>
 </head>
@@ -197,23 +225,91 @@
                 <p>Pasión por la medicina estética y los protocolos naturales</p>
             </div>
             <div class="team-grid">
+
+                <!-- Dra. Erika Caballero -->
+
                 <div class="team-card">
-                    <picture>
-                        <source srcset="img/erika_profesional-2prueba.webp" type="image/webp">
-                        <img src="img/erika_profesional-2prueba.jpg" alt="Dra. Erika Caballero" loading="lazy"
-                            width="400" height="400">
-                    </picture>
-                    <h3>Erika Caballero</h3>
-                    <p>Directora Médica</p>
+                    <section id="dra-erika-caballero">
+                    <img 
+                        src="/img/erika_profesional-2prueba.jpg" 
+                        alt="Dra. Erika Caballero, Directora Médica de Belle Aesthetic Medical Center en El Poblado, Medellín"
+                        width="400" height="400"
+                    />
+
+                    <h2>Dra. Erika Caballero</h2>
+                    <p><strong>Directora Médica · Especialista en Medicina Estética y Armonización Facial</strong></p>
+
+                    <p>
+                        Médica apasionada por la estética y la armonización facial, con más de 8 años 
+                        dedicados a resaltar la belleza natural de cada paciente. Directora y fundadora 
+                        de Belle Aesthetic Medical Center desde 2015, clínica habilitada por el 
+                        Ministerio de Salud de Colombia en El Poblado, Medellín.
+                    </p>
+
+                    <h3>Formación académica</h3>
+                    <ul>
+                        <li>
+                        <strong>Médica General</strong> — Corporación Universitaria Remington, Medellín (2016)
+                        </li>
+                        <li>
+                        <strong>Maestría Internacional en Medicina Estética</strong> — Educa Business School (2022)
+                        </li>
+                        <li>
+                        <strong>Entrenamiento Superior en Dermotocosmiatría</strong>
+                        </li>
+                    </ul>
+
+                    <h3>Membresías y certificaciones</h3>
+                    <ul>
+                        <li>Miembro activa de la SIRF — Sociedad Internacional de Rejuvenecimiento Facial (desde 2023)</li>
+                        <li>Clínica habilitada por la Secretaría de Salud de Antioquia</li>
+                    </ul>
+
+                    <h3>Especialidades clínicas</h3>
+                    <ul>
+                        <li>Armonización facial con ácido hialurónico</li>
+                        <li>Neuromodulación facial (toxina botulínica)</li>
+                        <li>Bioestimulación de colágeno (Sculptra, Radiesse)</li>
+                        <li>Protocolos inyectables avanzados</li>
+                        <li>Turismo médico estético internacional</li>
+                    </ul>
+                    </section>
                 </div>
+
+                <!-- Especialista Catalina Londoño -->
+                 
                 <div class="team-card">
-                    <picture>
-                        <source srcset="img/cata_doctora3.webp" type="image/webp">
-                        <img src="img/cata_doctora3.jpeg" alt="Especialista Catalina" loading="lazy" width="400"
-                            height="400">
-                    </picture>
-                    <h3>Catalina Londoño</h3>
-                    <p>Especialista en el cuidado de la piel, Facial y Corporal</p>
+                    <section id="dra-catalina-londono">
+                    <img 
+                        src="/img/cata_doctora3.jpeg" 
+                        alt="Dra. Catalina Londoño, Especialista en Cuidado de Piel Facial y Corporal en Belle Aesthetic Medellín"
+                        width="400" height="400"
+                    />
+
+                    <h2>Dra. Catalina Londoño</h2>
+                    <p><strong>Especialista en Cuidado de la Piel · Tratamientos Faciales y Corporales</strong></p>
+
+                    <p>
+                        Especialista dedicada al cuidado integral de la piel con enfoque en tratamientos 
+                        faciales y corporales de alta precisión. Su atención personalizada y sensibilidad 
+                        clínica garantizan resultados naturales adaptados a cada paciente.
+                    </p>
+
+                    <h3>Formación académica</h3>
+                    <ul>
+                        <li><strong>[Universidad / Institución]</strong> — [Título] ([Año])</li>
+                        <li><strong>[Especialización o posgrado]</strong> — [Institución] ([Año])</li>
+                    </ul>
+
+                    <h3>Especialidades clínicas</h3>
+                    <ul>
+                        <li>Tratamientos faciales avanzados</li>
+                        <li>Protocolos corporales reductivos y reafirmantes</li>
+                        <li>Cuidado y rejuvenecimiento de la piel</li>
+                        <li>[Agregar especialidades adicionales]</li>
+                    </ul>
+                    </section>
+                    </div>
                 </div>
             </div>
         </div>
