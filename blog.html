@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- SEO: Meta Description optimizada para el Blog -->
+    <meta name="description"
+        content="Explora nuestro blog sobre medicina estética en Medellín. Aprende sobre Tensamax, Sueroterapia, Limpieza Facial, Youth Pen y Endolifting para resaltar tu belleza natural.">
+
+    <!-- SEO: Keywords para el Blog -->
+    <meta name="keywords"
+        content="blog medicina estética Medellín, consejos belleza natural, información Tensamax, beneficios sueroterapia, cuidado de la piel Medellín, rejuvenecimiento facial sin cirugía">
+
+    <!-- SEO: Title optimizado -->
+    <title>Blog de Bienestar y Estética | Belle Aesthetic Medellín</title>
+
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href="https://bellemedicalcenter.com/blog">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bellemedicalcenter.com/blog">
+    <meta property="og:title" content="Blog de Bienestar y Estética | Belle Aesthetic Medellín">
+    <meta property="og:description"
+        content="Artículos educativos sobre los últimos tratamientos en medicina estética y bienestar integral en El Poblado, Medellín.">
+    <meta property="og:image" content="https://bellemedicalcenter.com/img/Logo-letra-transparente.png">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog Belle Aesthetic Medellín">
+    <meta name="twitter:description"
+        content="Educación y consejos sobre medicina estética avanzada y bienestar.">
+    <meta name="twitter:site" content="@belleaesthetic">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css?v=1.7">
+
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(74, 52, 40, 0.2);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .blog-card-content p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .blog-card-footer {
+            margin-top: auto;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--secondary-color);
+            color: var(--primary-dark);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .read-more i {
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(5px);
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD para Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog de Belle Aesthetic Medical Center",
+      "description": "Artículos sobre medicina estética, bienestar y tecnología en Medellín.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Belle Aesthetic Medical Center",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bellemedicalcenter.com/img/Logo-letra-transparente.png"
+        }
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- 1. CABECERA (HEADER) Y NAVEGACIÓN -->
+    <header class="header">
+        <div class="container header-container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="/">Página de Inicio</a></li>
+                    <li><a href="servicios">Nuestros Servicios</a></li>
+                    <li><a href="turismo-estetico">Turismo Estético</a></li>
+                    <li><a href="nosotros">Sobre Nosotros</a></li>
+                    <li><a href="blog" class="active">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. TÍTULO DE PÁGINA (HERO) -->
+    <header class="page-header page-header-blog" style="background: linear-gradient(135deg, var(--secondary-color), var(--bg-light)); padding: 100px 0 60px; text-align: center;">
+        <div class="container">
+            <span class="blog-tag">Educación y Bienestar</span>
+            <h1 style="font-size: 3.5rem; color: var(--text-color); margin-bottom: 15px;">Nuestro Blog</h1>
+            <p style="font-size: 1.2rem; color: var(--light-text); max-width: 700px; margin: 0 auto;">Espacio dedicado a compartir conocimientos sobre medicina estética, tecnología y el cuidado de tu belleza natural.</p>
+        </div>
+    </header>
+
+    <div class="spacer" style="height: 60px;"></div>
+
+    <!-- 3. CONTENIDO DEL BLOG -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Artículo 1: Tensamax -->
+                <a href="Blog/tensamax" class="blog-card">
+                    <img src="Blog/tensamax_1.png" alt="Tensamax en Belle Aesthetic" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-tag">Tecnología Facial</span>
+                        <h2>Tensamax: El Despertar Natural de la Firmeza en tu Piel</h2>
+                        <p>No se trata de alterar quién eres, sino de estimular a tu propio cuerpo para que recupere su tono natural a través de la radiofrecuencia avanzada.</p>
+                        <div class="blog-card-footer">
+                            <span class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Artículo 2: Sueroterapia -->
+                <a href="Blog/sueroterapia" class="blog-card">
+                    <img src="Blog/sueroterapia_1.png" alt="Sueroterapia IV en Medellín" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-tag">Bienestar IV</span>
+                        <h2>Sueroterapia IV: Nutrición Profunda que Transforma</h2>
+                        <p>Descubre cómo las vitaminas endovenosas garantizan una absorción del 100%, fortaleciendo tu sistema inmune y revitalizando tus células.</p>
+                        <div class="blog-card-footer">
+                            <span class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Artículo 3: Limpieza Facial -->
+                <a href="Blog/limpieza-facial" class="blog-card">
+                    <img src="Blog/limpieza-facial-1.png" alt="Limpieza facial profesional" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-tag">Cuidado de la Piel</span>
+                        <h2>Limpieza Facial: El Ritual Sagrado para una Piel que Respira</h2>
+                        <p>Mucho más que un lujo, es una necesidad higiénica. Aprende por qué la limpieza profesional es la base de cualquier tratamiento estético.</p>
+                        <div class="blog-card-footer">
+                            <span class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Artículo 4: Youth Pen -->
+                <a href="Blog/youth-pen" class="blog-card">
+                    <img src="Blog/youth-pen-1.png" alt="Youth Pen microneedling" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-tag">Renovación Cutánea</span>
+                        <h2>Youth Pen: Reescribiendo la Historia de tu Piel</h2>
+                        <p>La terapia de microagujas que despierta el poder autosanador de tu cuerpo para tratar cicatrices, líneas de expresión y poros dilatados.</p>
+                        <div class="blog-card-footer">
+                            <span class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Artículo 5: Endolifting -->
+                <a href="Blog/endolifting" class="blog-card">
+                    <img src="Blog/endolifting-1.png" alt="Endolifting sin cirugía" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-tag">Lifting sin Cirugía</span>
+                        <h2>Endolifting: La Evolución de la Firmeza sin Quirófano</h2>
+                        <p>Redefine tu contorno facial con tecnología láser de diodo mínimamente invasiva. Resultados estructurales sin cirugía tradicional.</p>
+                        <div class="blog-card-footer">
+                            <span class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer" style="height: 60px;"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Belle<span>Aesthetic</span></h3>
+                <p>Tu destino para la belleza y el bienestar integral.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/belleaestheticmedicalcenter/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/belle.estetica.med" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="/">Página de Inicio</a></li>
+                    <li><a href="servicios">Nuestros Servicios</a></li>
+                    <li><a href="turismo-estetico">Turismo Estético</a></li>
+                    <li><a href="nosotros">Sobre Nosotros</a></li>
+                    <li><a href="blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Cl 11A #42 68, El Poblado, Medellín</p>
+                <p><i class="fas fa-phone"></i> +57 311 6188733</p>
+                <p><i class="fas fa-envelope"></i> recepcion@bellemedicalcenter.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Belle Aesthetic. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/+573116188733" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js?v=1.7" defer></script>
+</body>
+
+</html>
