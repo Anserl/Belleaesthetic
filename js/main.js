@@ -618,4 +618,94 @@ ${mensaje}`;
         });
     }
 
+    // --- 12. AVISO DÍA DE LA MADRE (TEMPORAL: ELIMINAR DESPUÉS DE MAYO) ---
+    /**
+     * Esta función gestiona el aviso promocional del Día de la Madre.
+     * Está diseñada para ser fácilmente removible eliminando este bloque y 
+     * su sección correspondiente en style.css.
+     */
+    function initMotherDayNotice() {
+        // 1. Verificación de Fecha (Solo mostrar en Mayo)
+        const now = new Date();
+        const isMay = now.getMonth() === 4; // 4 es Mayo en JS
+        // Si no es mayo, no hacer nada (seguridad extra)
+        if (!isMay) return;
+
+        // 2. Verificación de Sesión (Solo mostrar una vez por visita)
+        if (sessionStorage.getItem('motherDayNoticeClosed')) return;
+
+        // 3. Definición del HTML
+        const modalHTML = `
+            <div class="mother-day-modal" id="motherDayModal" role="dialog" aria-labelledby="motherDayTitle" aria-modal="true">
+                <div class="mother-day-content">
+                    <button class="mother-day-close" id="closeMotherDay" aria-label="Cerrar aviso">&times;</button>
+                    <div class="mother-day-icon" aria-hidden="true">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h2 id="motherDayTitle">¡Celebremos a Mamá! 🌸</h2>
+                    <p>Descubre nuestras promociones especiales del Mes de las Madres. ¡Regálale belleza y bienestar!</p>
+                    <a href="https://wa.me/573116188733?text=Hola%21%20Quiero%20conocer%20las%20promociones%20del%20D%C3%ADa%20de%20la%20Madre%20🌸" 
+                       class="mother-day-btn" target="_blank" id="whatsappMotherDay">
+                        <i class="fab fa-whatsapp"></i> Consultar Promociones
+                    </a>
+                </div>
+            </div>
+        `;
+
+        // 4. Inserción en el DOM
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        const modal = document.getElementById('motherDayModal');
+        const closeBtn = document.getElementById('closeMotherDay');
+        const whatsappBtn = document.getElementById('whatsappMotherDay');
+
+        // 5. Función para Cerrar y Limpiar
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurar scroll
+            sessionStorage.setItem('motherDayNoticeClosed', 'true');
+            
+            // Remover del DOM después de la animación para no dejar basura
+            setTimeout(() => {
+                if (modal.parentNode) modal.remove();
+            }, 500);
+        };
+
+        // 6. Mostrar con delay y bloquear scroll
+        setTimeout(() => {
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
+            }
+        }, 1500);
+
+        // 7. Eventos de Cierre
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', () => {
+                // No cerramos inmediatamente para que el usuario vea que se procesa
+                // Pero marcamos como cerrado para la próxima vez
+                sessionStorage.setItem('motherDayNoticeClosed', 'true');
+                setTimeout(closeModal, 1500);
+            });
+        }
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Iniciar el aviso (Segmentado para fácil desactivación)
+    initMotherDayNotice();
+
 });

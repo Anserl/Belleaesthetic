@@ -3391,6 +3391,7 @@ img {
     margin: 40px auto 0;
     padding: 60px 40px;
     background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
@@ -3639,3 +3640,149 @@ img {
         height: 44px;
     }
 }
+
+/* 
+   ========================================
+   14. AVISO DÍA DE LA MADRE (TEMPORAL)
+   ========================================
+   ESTA SECCIÓN PUEDE SER ELIMINADA DESPUÉS DE MAYO.
+   IMPORTANTE: Al eliminar estos estilos, eliminar también la función 
+   initMotherDayNotice() en js/main.js
+*/
+
+.mother-day-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Un poco más oscuro para mejor enfoque */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Mayor desenfoque */
+}
+
+.mother-day-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mother-day-content {
+    background: var(--bg-light);
+    max-width: 480px;
+    width: 90%;
+    padding: 60px 40px 50px; /* Ajuste de padding */
+    border-radius: 40px; /* Bordes más redondeados */
+    position: relative;
+    text-align: center;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 165, 165, 0.3); /* Borde más sutil */
+    transform: scale(0.7);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mother-day-modal.active .mother-day-content {
+    transform: scale(1);
+}
+
+.mother-day-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 28px;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: none; /* Asegurar que se vea como botón limpio */
+    outline: none;
+}
+
+.mother-day-close:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+    background: var(--white);
+}
+
+.mother-day-icon {
+    font-size: 60px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    animation: pulseHeart 2s infinite;
+}
+
+@keyframes pulseHeart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.mother-day-content h2 {
+    color: var(--text-color);
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mother-day-content p {
+    color: var(--light-text);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.mother-day-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E); /* Gradiente WhatsApp */
+    color: white !important;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.mother-day-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+}
+
+.mother-day-btn i {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 480px) {
+    .mother-day-content {
+        padding: 50px 25px 40px;
+    }
+    .mother-day-content h2 {
+        font-size: 2rem;
+    }
+    .mother-day-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+/* FIN SECCIÓN DÍA DE LA MADRE */
