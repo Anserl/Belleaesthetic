@@ -628,13 +628,11 @@ ${mensaje}`;
         // 1. Verificación de Fecha (Solo mostrar en Mayo)
         const now = new Date();
         const isMay = now.getMonth() === 4; // 4 es Mayo en JS
-        // Si no es mayo, no hacer nada (seguridad extra)
+        
+        // Si no es mayo, no hacer nada
         if (!isMay) return;
 
-        // 2. Verificación de Sesión (Solo mostrar una vez por visita)
-        if (sessionStorage.getItem('motherDayNoticeClosed')) return;
-
-        // 3. Definición del HTML
+        // 2. Definición del HTML
         const modalHTML = `
             <div class="mother-day-modal" id="motherDayModal" role="dialog" aria-labelledby="motherDayTitle" aria-modal="true">
                 <div class="mother-day-content">
@@ -652,26 +650,25 @@ ${mensaje}`;
             </div>
         `;
 
-        // 4. Inserción en el DOM
+        // 3. Inserción en el DOM
         document.body.insertAdjacentHTML('beforeend', modalHTML);
 
         const modal = document.getElementById('motherDayModal');
         const closeBtn = document.getElementById('closeMotherDay');
         const whatsappBtn = document.getElementById('whatsappMotherDay');
 
-        // 5. Función para Cerrar y Limpiar
+        // 4. Función para Cerrar y Limpiar
         const closeModal = () => {
             modal.classList.remove('active');
             document.body.style.overflow = ''; // Restaurar scroll
-            sessionStorage.setItem('motherDayNoticeClosed', 'true');
             
-            // Remover del DOM después de la animación para no dejar basura
+            // Remover del DOM después de la animación
             setTimeout(() => {
                 if (modal.parentNode) modal.remove();
             }, 500);
         };
 
-        // 6. Mostrar con delay y bloquear scroll
+        // 5. Mostrar con delay y bloquear scroll
         setTimeout(() => {
             if (modal) {
                 modal.classList.add('active');
@@ -679,7 +676,7 @@ ${mensaje}`;
             }
         }, 1500);
 
-        // 7. Eventos de Cierre
+        // 6. Eventos de Cierre
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
         
         if (modal) {
@@ -690,16 +687,13 @@ ${mensaje}`;
 
         if (whatsappBtn) {
             whatsappBtn.addEventListener('click', () => {
-                // No cerramos inmediatamente para que el usuario vea que se procesa
-                // Pero marcamos como cerrado para la próxima vez
-                sessionStorage.setItem('motherDayNoticeClosed', 'true');
                 setTimeout(closeModal, 1500);
             });
         }
 
         // Cerrar con tecla ESC
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
                 closeModal();
             }
         });
